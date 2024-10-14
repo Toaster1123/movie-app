@@ -1,0 +1,16 @@
+@mixin itemPArams() {
+  height: 440px;
+  width: 822px;
+}
+.sliderMain {
+  height: 50vh;
+  display: flex;
+  margin-top: 60px;
+  .item {
+    @include itemPArams();
+    border-radius: 23px;
+    img {
+      @include itemPArams();
+    }
+  }
+}
