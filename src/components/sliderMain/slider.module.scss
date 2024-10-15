@@ -1,16 +1,63 @@
 @mixin itemPArams() {
-  height: 440px;
-  width: 822px;
+  height: 578px;
+  width: 1030px;
+}
+.ratingColorGreen {
+  background-color: #04942f;
+}
+.ratingColorOrange {
+  background-color: #cc780a;
+}
+.ratingColorRed {
+  background-color: #c90d0d;
 }
 .sliderMain {
-  height: 50vh;
-  display: flex;
+  user-select: none;
+  cursor: pointer;
+  margin: auto;
   margin-top: 60px;
+  @include itemPArams();
   .item {
     @include itemPArams();
     border-radius: 23px;
+    overflow: hidden;
     img {
       @include itemPArams();
+    }
+    .item_text {
+      position: absolute;
+      top: 440px;
+      left: 50px;
+      color: white;
+    }
+    .item_title {
+      font-family: sans-serif;
+      font-weight: 800;
+      font-size: 37px;
+    }
+    .item_info {
+      margin-top: 10px;
+      display: flex;
+      font-family: sans-serif;
+      font-weight: 600;
+      font-size: 20px;
+      align-items: center;
+      .rating {
+        border-radius: 7px;
+        font-size: 18px;
+        margin-right: 14px;
+        padding: 5px 6px;
+      }
+      .year {
+        margin-right: 14px;
+      }
+      .genres {
+        margin-right: 14px;
+        display: flex;
+      }
+      .age {
+        margin-left: 14px;
+      }
     }
   }
 }
