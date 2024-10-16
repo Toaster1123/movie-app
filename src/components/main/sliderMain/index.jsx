@@ -15,7 +15,7 @@ export const SliderMain = ({ scrollItems, loading }) => {
     if (val < 4.0) {
       return style.ratingColorRed;
     }
-    if ((val > 4.0) & (val < 7.0)) {
+    if ((val > 4.0) & (val < 6.9)) {
       return style.ratingColorOrange;
     } else {
       return style.ratingColorGreen;

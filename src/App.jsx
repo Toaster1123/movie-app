@@ -2,7 +2,7 @@ import React from 'react';
 import axios from 'axios';
 
 import { Header } from './components/header';
-import { SliderMain } from './components/sliderMain';
+import { MainPage } from './components/main';
 function App() {
   const [movieArr, setMovieArr] = React.useState([]);
   const [loading, setLoading] = React.useState(true);
@@ -35,7 +35,7 @@ function App() {
   return (
     <div className="App">
       <Header />
-      <SliderMain scrollItems={movieArr} loading={loading} />
+      <MainPage scrollItems={movieArr} loading={loading} />
     </div>
   );
 }

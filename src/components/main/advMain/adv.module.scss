@@ -1,0 +1,27 @@
+.Main {
+  width: 100vw;
+  background-image: url('https://static.okko.tv/notifications/tv/1721727421795/1723728262016_1920x778.jpg');
+  height: 78vh;
+  background-size: cover;
+  //   background-position: center;
+  color: white;
+  .TextBlock {
+    .subscrube {
+      display: flex;
+      .subText {
+        font-family: sans-serif;
+        font-weight: 600;
+        font-size: 1.7em;
+      }
+      .subimg {
+        font-family: sans-serif;
+        font-weight: 200;
+        display: flex;
+        align-items: center;
+        font-size: 1.2em;
+        margin-left: 22px;
+        background-color: ;
+      }
+    }
+  }
+}
