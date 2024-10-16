@@ -15,7 +15,7 @@
   user-select: none;
   cursor: pointer;
   margin: auto;
-  margin-top: 60px;
+  margin-top: 40px;
   @include itemPArams();
   .item {
     @include itemPArams();
@@ -23,10 +23,11 @@
     overflow: hidden;
     img {
       @include itemPArams();
+      pointer-events: none;
     }
     .item_text {
       position: absolute;
-      top: 440px;
+      top: 420px;
       left: 50px;
       color: white;
     }

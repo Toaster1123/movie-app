@@ -16,9 +16,10 @@ function App() {
             'Content-Type': 'application/json',
           },
           params: {
-            limit: 15,
+            limit: 11,
             // 'countries.name': 'Россия',
             'rating.kp': '6 - 10',
+            notNullFields: 'backdrop.url',
           },
         });
         setLoading(false);
