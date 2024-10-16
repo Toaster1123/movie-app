@@ -2,25 +2,83 @@
   width: 100vw;
   background-image: url('https://static.okko.tv/notifications/tv/1721727421795/1723728262016_1920x778.jpg');
   height: 78vh;
+  display: flex;
+  align-items: center;
   background-size: cover;
-  //   background-position: center;
+  // background-position: center;
+
   color: white;
   .TextBlock {
+    margin-left: 100px;
+
     .subscrube {
+      margin-bottom: 33px;
       display: flex;
       .subText {
         font-family: sans-serif;
         font-weight: 600;
         font-size: 1.7em;
       }
-      .subimg {
-        font-family: sans-serif;
-        font-weight: 200;
-        display: flex;
-        align-items: center;
-        font-size: 1.2em;
-        margin-left: 22px;
-        background-color: ;
+      img {
+        margin-left: 12px;
+      }
+    }
+    .advBigText {
+      font-size: 2.9em;
+      font-family: sans-serif;
+      width: 25vw;
+      font-weight: 600;
+      margin-bottom: 27px;
+    }
+    .advYellowPrice {
+      color: #f8db05;
+      font-weight: 600;
+      font-size: 1.7em;
+      font-family: sans-serif;
+    }
+    .advPrice {
+      font-size: 1.4em;
+      font-family: sans-serif;
+      margin-top: 6px;
+    }
+    .buttons {
+      margin-top: 28px;
+      .buttonBuy {
+        margin-right: 12px;
+        padding: 15px 22px;
+        border: none;
+        font-size: 1.3em;
+        color: white;
+        border: 1.5px solid rgba(0, 0, 0, 0);
+        font-weight: 500;
+        background: linear-gradient(to top right, #2b0071, #4e00cc, #6f15ff);
+        border-radius: 12px;
+        cursor: pointer;
+        transition: 0.2s ease-in-out;
+        &:hover {
+          background: linear-gradient(to right, #2b0071, #5301d8, #6f15ff);
+          border: 1.5px solid white;
+        }
+      }
+      .buttonMore {
+        padding: 15px 22px;
+        border: none;
+        font-size: 1.3em;
+        color: white;
+        font-weight: 500;
+        cursor: pointer;
+        transition: 0.2s ease-in-out;
+        border-radius: 12px;
+        background: #000;
+      }
+      .buttonMore:before {
+        content: '';
+        height: 10%;
+        width: 20%;
+        background-image: conic-gradient(#9f65fd75 20deg, transparent 120deg);
+        position: absolute;
+        top: 50%;
+        left: 25%;
       }
     }
   }
