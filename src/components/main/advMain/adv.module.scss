@@ -71,15 +71,15 @@
         border-radius: 12px;
         background: #000;
       }
-      .buttonMore:before {
-        content: '';
-        height: 10%;
-        width: 20%;
-        background-image: conic-gradient(#9f65fd75 20deg, transparent 120deg);
-        position: absolute;
-        top: 50%;
-        left: 25%;
-      }
+      // .buttonMore:before {
+      //   content: '';
+      //   height: 10%;
+      //   width: 20%;
+      //   background-image: conic-gradient(#9f65fd75 20deg, transparent 120deg);
+      //   position: absolute;
+      //   top: 50%;
+      //   left: 25%;
+      // }
     }
   }
 }

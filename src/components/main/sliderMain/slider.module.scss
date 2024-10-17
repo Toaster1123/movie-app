@@ -1,4 +1,4 @@
-@mixin itemPArams() {
+@mixin itemParams() {
   height: 578px;
   width: 1030px;
 }
@@ -16,13 +16,14 @@
   cursor: pointer;
   margin: auto;
   margin-top: 40px;
-  @include itemPArams();
+  @include itemParams();
+  width: 100vw;
   .item {
-    @include itemPArams();
+    @include itemParams();
     border-radius: 23px;
     overflow: hidden;
     img {
-      @include itemPArams();
+      @include itemParams();
       pointer-events: none;
     }
     .item_text {
