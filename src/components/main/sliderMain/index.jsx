@@ -3,35 +3,16 @@ import style from './slider.module.scss';
 import { Navigation, Autoplay, EffectCoverflow } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import chooseColorRating from '../../../lib/chooseColorRating.js';
+import { setMovieLength } from '../../../lib/setMovieLength.js';
 
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import 'swiper/css/effect-coverflow';
 
-//todo: Плавные переходы, поменять стиль кнопок, сделать несколько слайдов
 export const SliderMain = ({ scrollItems, loading }) => {
   console.log(loading);
-  console.log(scrollItems);
-  console.log(chooseColorRating(4));
-  let hours = 0;
-  let minutes = 0;
-  const setMovieLength = (num) => {
-    while (num > 0) {
-      minutes = num;
-      num -= 60;
-      if (num >= 0) {
-        hours++;
-        minutes = 0;
-      } else {
-        if (hours === 0) {
-          return minutes + ' мин';
-        } else {
-          return hours + ' ч ' + minutes + ' мин';
-        }
-      }
-    }
-  };
+
   if (loading) {
     return;
   }
@@ -44,15 +25,15 @@ export const SliderMain = ({ scrollItems, loading }) => {
         }}
         slidesPerView={3}
         coverflowEffect={{
-          rotate: 10,
-          stretch: 10,
+          rotate: 0,
+          stretch: 300,
           depth: 10,
           modifier: 1,
           slideShadows: true,
         }}
         navigation
         modules={[Navigation, Autoplay, EffectCoverflow]}
-        // spaceBetween={30}
+        // spaceBetween={310}
         loop
         autoplay={{
           delay: 12000,
@@ -67,7 +48,7 @@ export const SliderMain = ({ scrollItems, loading }) => {
                 <div className={style.item_text}>
                   <div className={style.item_title}>{item.name}</div>
                   <div className={style.item_info}>
-                    <div className={`${style.rating} ${style.chooseColorRating(item.rating.kp)}`}>
+                    <div className={`${style.rating} ${style[chooseColorRating(item.rating.kp)]}`}>
                       {item.rating.kp.toFixed(1)}
                     </div>
                     <div className={style.year}>{item.year}</div>

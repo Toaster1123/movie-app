@@ -7,55 +7,75 @@
 .ratingColorRed {
   background-color: #c90d0d;
 }
+
 .main {
-  transition: 0.2s ease-in-out;
+  transition: all 0.28s ease-in-out;
   cursor: pointer;
-  border-radius: 15px 15px 0 0;
+
   &:hover {
-    transform: scale(1.2);
+    transform: scale(1.3);
+    position: absolute;
+    .image {
+      border-radius: 16px 16px 0 0;
+    }
+    .textBlock {
+      visibility: visible;
+    }
   }
   .image {
-    height: 155px;
-    width: 100%;
-    border-radius: 20px;
+    height: 183px;
+    width: 325px;
+    border-radius: 16px;
   }
   .textBlock {
-    //   visibility: hidden;
-    //   position: absolute;
-  }
-}
-.item_text {
-  position: absolute;
-  top: 420px;
-  left: 50px;
-  color: white;
-}
-.item_title {
-  font-family: sans-serif;
-  font-weight: 800;
-  font-size: 37px;
-}
-.item_info {
-  margin-top: 10px;
-  display: flex;
-  font-family: sans-serif;
-  font-weight: 600;
-  font-size: 20px;
-  align-items: center;
-  .rating {
-    border-radius: 7px;
-    font-size: 18px;
-    margin-right: 14px;
-    padding: 5px 6px;
-  }
-  .year {
-    margin-right: 14px;
-  }
-  .genres {
-    margin-right: 14px;
-    display: flex;
-  }
-  .age {
-    margin-left: 14px;
+    visibility: hidden;
+    border-radius: 0 0 16px 16px;
+    background-color: #1b1b1b;
+    font-family: sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    padding: 10px 16px;
+    margin-top: -10px;
+    .text {
+      align-items: center;
+      display: flex;
+      flex-direction: row;
+
+      .rating {
+        border-radius: 5px;
+        font-size: 11px;
+        margin-right: 7px;
+        padding: 5px 4px;
+      }
+      .year {
+        margin-right: 8px;
+      }
+      .genres {
+        margin-right: 8px;
+        display: flex;
+      }
+      .age {
+        margin-left: 8px;
+      }
+    }
+    .buttons {
+      .btnMore {
+        margin-top: 8px;
+        padding: 7px 10px;
+        display: inline-block;
+        border: none;
+        font-size: 14px;
+        border: 1.5px solid rgba(0, 0, 0, 0);
+        font-weight: 500;
+        background: linear-gradient(to top right, #2b0071, #4e00cc, #6f15ff);
+        border-radius: 8px;
+        cursor: pointer;
+        transition: 0.2s ease-in-out;
+        &:hover {
+          background: linear-gradient(to right, #2b0071, #5301d8, #6f15ff);
+          border: 1.5px solid white;
+        }
+      }
+    }
   }
 }

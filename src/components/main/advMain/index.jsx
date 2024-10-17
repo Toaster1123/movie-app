@@ -3,7 +3,6 @@ import style from './adv.module.scss';
 export const AdvMain = () => {
   return (
     <div className={style.Main}>
-      {/* <img src="" /> */}
       <div className={style.TextBlock}>
         <div className={style.subscrube}>
           <div className={style.subText}>Подписка</div>

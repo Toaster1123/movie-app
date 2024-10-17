@@ -17,7 +17,7 @@
   margin: auto;
   margin-top: 40px;
   @include itemParams();
-  width: 100vw;
+  width: 100%;
   .item {
     @include itemParams();
     border-radius: 23px;
@@ -35,6 +35,8 @@
     .item_title {
       font-family: sans-serif;
       font-weight: 800;
+      width: 700px;
+
       font-size: 37px;
     }
     .item_info {

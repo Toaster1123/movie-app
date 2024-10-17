@@ -2,27 +2,28 @@ import React from 'react';
 import style from './sliderItem.module.scss';
 
 import chooseColorRating from '../../../../lib/chooseColorRating';
-export const SliderItem = () => {
+import { setMovieLength } from '../../../../lib/setMovieLength';
+export const SliderItem = ({ item }) => {
+  console.log(item.backdrop.url);
   return (
     <div className={style.main}>
-      <img
-        className={style.image}
-        src="https://pic.rutubelist.ru/video/b3/51/b3518c0f1f662f5e6298b6ac9802bed3.jpg"
-        alt="заставка фильма"
-      />
+      <img className={style.image} src={item.backdrop.url} alt="заставка фильма" />
       <div className={style.textBlock}>
-        <div className={style.top}>
-          <div className={`${style.rating} ${chooseColorRating(7.7)}`}></div>
-          {/* {item.rating.kp.toFixed(1)} */}
-
-          <div className={style.year}></div>
-          {/* {item.year} */}
-          <div className={style.genres}></div>
-          {/* {item.genres[0].name} */}
-          <div className={style.length}></div>
-          {/* {setMovieLength(item.movieLength || item.seriesLength)} */}
-          <div className={style.age}></div>
-          {/* {item.ageRating && item.ageRating + '+'}  */}
+        <div className={style.text}>
+          <div className={`${style.rating} ${style[chooseColorRating(7.6)]}`}>
+            {' '}
+            {item.rating.kp.toFixed(1)}
+          </div>
+          <div className={style.year}>{item.year}</div>
+          <div className={style.genres}>{item.genres[0].name}</div>
+          <div className={style.length}>
+            {setMovieLength(item.movieLength || item.seriesLength)}
+          </div>
+          <div className={style.age}>{item.ageRating && item.ageRating + '+'} </div>
+        </div>
+        <div className={style.buttons}>
+          <div className={style.btnMore}>Подробнее</div>
+          <div className={style.btnSave}></div>
         </div>
       </div>
     </div>

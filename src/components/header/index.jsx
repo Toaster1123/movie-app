@@ -5,7 +5,6 @@ import { Search, CircleUserRound } from 'lucide-react';
 const genres = ['Главная', 'Фильмы', 'Сериалы', 'Мультфильмы'];
 export const Header = () => {
   const [currentGenres, setCurrentGenres] = React.useState(0);
-
   return (
     <header>
       <div className={style.header}>

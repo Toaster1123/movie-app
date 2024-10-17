@@ -1,7 +1,7 @@
 .Main {
-  width: 100vw;
+  width: 100%;
   background-image: url('https://static.okko.tv/notifications/tv/1721727421795/1723728262016_1920x778.jpg');
-  height: 78vh;
+  height: 700px;
   display: flex;
   align-items: center;
   background-size: cover;
@@ -71,15 +71,6 @@
         border-radius: 12px;
         background: #000;
       }
-      // .buttonMore:before {
-      //   content: '';
-      //   height: 10%;
-      //   width: 20%;
-      //   background-image: conic-gradient(#9f65fd75 20deg, transparent 120deg);
-      //   position: absolute;
-      //   top: 50%;
-      //   left: 25%;
-      // }
     }
   }
 }
