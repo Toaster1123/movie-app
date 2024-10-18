@@ -7,11 +7,15 @@
 .ratingColorRed {
   background-color: #c90d0d;
 }
-
+@media screen and (man-width: 2200px) {
+  .image {
+    height: 100px;
+    width: 100px;
+  }
+}
 .main {
   transition: all 0.28s ease-in-out;
   cursor: pointer;
-
   &:hover {
     transform: scale(1.3);
     position: absolute;
@@ -25,7 +29,6 @@
   .image {
     height: 183px;
     width: 325px;
-    border-radius: 16px;
   }
   .textBlock {
     visibility: hidden;

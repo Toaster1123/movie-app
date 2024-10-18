@@ -33,9 +33,8 @@ function App() {
             },
             params: {
               limit: 15,
-              'rating.kp': '8 - 10',
               type: 'movie',
-              year: '2020-2024',
+              'genres.name': 'ужасы',
             },
           },
         );

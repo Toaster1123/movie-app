@@ -23,7 +23,7 @@ export const SliderMain = ({ scrollItems, loading }) => {
         style={{
           '--swiper-navigation-color': '#fff',
         }}
-        slidesPerView={3}
+        slidesPerView={1}
         coverflowEffect={{
           rotate: 0,
           stretch: 300,
