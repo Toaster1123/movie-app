@@ -3,13 +3,10 @@ import React from 'react';
 import { Header } from './components/header';
 import { MainPage } from './components/main';
 function App() {
-  // const [movieArr, setMovieArr] = React.useState([]);
-  const [loading, setLoading] = React.useState(true);
-
   return (
     <div className="App">
       <Header />
-      <MainPage humorFilmsRec={humorFilmsRec} loading={loading} />
+      <MainPage />
     </div>
   );
 }

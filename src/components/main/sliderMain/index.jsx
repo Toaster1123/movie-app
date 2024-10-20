@@ -1,25 +1,25 @@
 import React from 'react';
-import style from './slider.module.scss';
 import { Navigation, Autoplay } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
+
+import style from './slider.module.scss';
+
 import chooseColorRating from '../../../lib/chooseColorRating.js';
 import { setMovieLength } from '../../../lib/setMovieLength.js';
+
 import { useMovieMainSwiper } from '../../../store/movieMainSlider.js';
 
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
-import 'swiper/css/effect-coverflow';
 
-export const SliderMain = ({ loading }) => {
-  // console.log(loading);
-  console.log(useMovieMainSwiper((state) => state.dataMainSwiper));
+export const SliderMain = () => {
   const scrollItems = useMovieMainSwiper((state) => state.dataMainSwiper);
   const fetchData = useMovieMainSwiper((state) => state.fetchItems);
 
   React.useEffect(() => {
     try {
-      fetchData();
+      fetchData('4G89DHV-E8P4HZE-NVKHR5V-HH4C6D5');
       // console.log(scrollItems);
     } catch (error) {
       console.log(error);
@@ -32,18 +32,10 @@ export const SliderMain = ({ loading }) => {
   return (
     <section className={style.sliderMain}>
       <Swiper
-        effect={'coverflow'}
         style={{
           '--swiper-navigation-color': '#fff',
         }}
         slidesPerView={2}
-        // coverflowEffect={{
-        //   rotate: 0,
-        //   stretch: 300,
-        //   depth: 10,
-        //   modifier: 1,
-        //   slideShadows: true,
-        // }}
         navigation
         modules={[Navigation, Autoplay]}
         spaceBetween={200}

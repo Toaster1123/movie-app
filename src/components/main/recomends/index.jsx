@@ -7,10 +7,10 @@ import { SliderItem } from './sliderItem';
 import 'swiper/css';
 import 'swiper/css/navigation';
 
-export const RecomendsMovie = ({ humorFilmsRec, title }) => {
+export const RecomendsMovie = (props) => {
   return (
     <div className={style.main}>
-      <section className={style.NameOfRec}>{title}</section>
+      <section className={style.NameOfRec}>{props.title}</section>
       <section>
         <Swiper
           className={style.swiper}
@@ -22,11 +22,11 @@ export const RecomendsMovie = ({ humorFilmsRec, title }) => {
           navigation
           modules={[Navigation]}
           spaceBetween={12}>
-          {humorFilmsRec != undefined &&
-            humorFilmsRec.map((item, id) => {
+          {props.filmsData != undefined &&
+            props.filmsData.map((item, id) => {
               return (
                 <SwiperSlide key={id}>
-                  <SliderItem item={item} />
+                  <SliderItem item={item} height={props.height} />
                 </SwiperSlide>
               );
             })}

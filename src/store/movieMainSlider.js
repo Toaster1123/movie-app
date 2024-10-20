@@ -4,18 +4,19 @@ import axios from 'axios';
 export const useMovieMainSwiper = create((set) => ({
   dataMainSwiper: [],
   loading: true,
-  fetchItems: async () => {
+  fetchItems: async (key) => {
     try {
       set({ loading: true });
       const data = await axios.get(
         'https://api.kinopoisk.dev/v1.4/movie?notNullFields=backdrop.url&notNullFields=movieLength',
         {
           headers: {
-            'X-API-KEY': 'SMF2M17-D074329-QBAG7RZ-MBRR9QB',
+            'X-API-KEY': key,
             'Content-Type': 'application/json',
           },
           params: {
             limit: 12,
+            'countries.name': 'Россия',
             'rating.kp': '6 - 10',
           },
         },

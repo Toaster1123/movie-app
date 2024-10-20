@@ -2,6 +2,14 @@
   height: 578px;
   width: 1030px;
 }
+.swiper-button-prev,
+.swiper-button-next {
+  border-radius: 5px;
+  height: 70px;
+  width: 50px;
+  background-color: #7e7e7e71;
+}
+
 .ratingColorGreen {
   background-color: #04942f;
 }
@@ -11,6 +19,7 @@
 .ratingColorRed {
   background-color: #c90d0d;
 }
+
 .sliderMain {
   user-select: none;
   cursor: pointer;
