@@ -4,11 +4,18 @@ import style from './sliderItem.module.scss';
 import chooseColorRating from '../../../../lib/chooseColorRating';
 import { setMovieLength } from '../../../../lib/setMovieLength';
 export const SliderItem = ({ item }) => {
-  console.log(item.backdrop.url);
+  // console.log(item.backdrop.url);
   return (
     <div className={style.main}>
-      <img className={style.image} src={item.backdrop.url} alt="заставка фильма" />
+      <div className={style.imageBorder}>
+        <img
+          className={style.image}
+          src={item.backdrop.url || item.backdrop.preveiwUrl}
+          alt="заставка фильма"
+        />
+      </div>
       <div className={style.textBlock}>
+        <div className={style.filmName}>{item.name}</div>
         <div className={style.text}>
           <div className={`${style.rating} ${style[chooseColorRating(7.6)]}`}>
             {' '}

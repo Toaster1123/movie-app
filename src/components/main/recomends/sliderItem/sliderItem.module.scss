@@ -16,21 +16,19 @@
 .main {
   transition: all 0.28s ease-in-out;
   cursor: pointer;
-  &:hover {
-    transform: scale(1.3);
-    position: absolute;
-    .image {
-      border-radius: 16px 16px 0 0;
-    }
-    .textBlock {
-      visibility: visible;
-    }
-  }
-  .image {
+  margin-bottom: -68px;
+  max-width: 325px;
+  .imageBorder {
     height: 183px;
     width: 325px;
+    .image {
+      height: 100%;
+      width: 100%;
+      border-radius: 16px;
+    }
   }
   .textBlock {
+    // display: none;
     visibility: hidden;
     border-radius: 0 0 16px 16px;
     background-color: #1b1b1b;
@@ -39,6 +37,11 @@
     font-size: 14px;
     padding: 10px 16px;
     margin-top: -10px;
+    .filmName {
+      font-size: 15px;
+      margin-top: 4px;
+      margin-bottom: 6px;
+    }
     .text {
       align-items: center;
       display: flex;
@@ -76,9 +79,20 @@
         transition: 0.2s ease-in-out;
         &:hover {
           background: linear-gradient(to right, #2b0071, #5301d8, #6f15ff);
-          border: 1.5px solid white;
+          border: 1px solid white;
         }
       }
+    }
+  }
+  &:hover {
+    transform: scale(1.3);
+    position: absolute;
+    .image {
+      border-radius: 16px 16px 0 0;
+    }
+    .textBlock {
+      visibility: visible;
+      // display: block;
     }
   }
 }

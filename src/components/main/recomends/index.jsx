@@ -7,11 +7,11 @@ import { SliderItem } from './sliderItem';
 import 'swiper/css';
 import 'swiper/css/navigation';
 
-export const RecomendsMovie = ({ humorFilmsRec }) => {
+export const RecomendsMovie = ({ humorFilmsRec, title }) => {
   console.log(humorFilmsRec);
   return (
     <div className={style.main}>
-      <section className={style.NameOfRec}>Лучшие фильмы за 1902 год</section>
+      <section className={style.NameOfRec}>{title}</section>
       <section>
         <Swiper
           className={style.swiper}
@@ -32,8 +32,6 @@ export const RecomendsMovie = ({ humorFilmsRec }) => {
               );
             })}
         </Swiper>
-        {/* <div class="swiper-button-next"></div>
-        <div class="swiper-button-prev"></div> */}
       </section>
     </div>
   );

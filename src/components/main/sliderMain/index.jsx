@@ -1,6 +1,6 @@
 import React from 'react';
 import style from './slider.module.scss';
-import { Navigation, Autoplay, EffectCoverflow } from 'swiper/modules';
+import { Navigation, Autoplay } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import chooseColorRating from '../../../lib/chooseColorRating.js';
 import { setMovieLength } from '../../../lib/setMovieLength.js';
@@ -23,17 +23,17 @@ export const SliderMain = ({ scrollItems, loading }) => {
         style={{
           '--swiper-navigation-color': '#fff',
         }}
-        slidesPerView={1}
-        coverflowEffect={{
-          rotate: 0,
-          stretch: 300,
-          depth: 10,
-          modifier: 1,
-          slideShadows: true,
-        }}
+        slidesPerView={2}
+        // coverflowEffect={{
+        //   rotate: 0,
+        //   stretch: 300,
+        //   depth: 10,
+        //   modifier: 1,
+        //   slideShadows: true,
+        // }}
         navigation
-        modules={[Navigation, Autoplay, EffectCoverflow]}
-        // spaceBetween={310}
+        modules={[Navigation, Autoplay]}
+        spaceBetween={200}
         loop
         autoplay={{
           delay: 12000,
