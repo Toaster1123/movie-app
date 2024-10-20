@@ -4,16 +4,29 @@ import { Navigation, Autoplay } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import chooseColorRating from '../../../lib/chooseColorRating.js';
 import { setMovieLength } from '../../../lib/setMovieLength.js';
+import { useMovieMainSwiper } from '../../../store/movieMainSlider.js';
 
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import 'swiper/css/effect-coverflow';
 
-export const SliderMain = ({ scrollItems, loading }) => {
-  console.log(loading);
+export const SliderMain = ({ loading }) => {
+  // console.log(loading);
+  console.log(useMovieMainSwiper((state) => state.dataMainSwiper));
+  const scrollItems = useMovieMainSwiper((state) => state.dataMainSwiper);
+  const fetchData = useMovieMainSwiper((state) => state.fetchItems);
 
-  if (loading) {
+  React.useEffect(() => {
+    try {
+      fetchData();
+      // console.log(scrollItems);
+    } catch (error) {
+      console.log(error);
+    }
+  }, []);
+
+  if (useMovieMainSwiper((state) => state.loading)) {
     return;
   }
   return (
