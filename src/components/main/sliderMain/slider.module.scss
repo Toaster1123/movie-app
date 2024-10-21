@@ -1,10 +1,6 @@
-@mixin itemParamsBig() {
-  height: 578px;
-  width: 1030px;
-}
-@mixin itemParamsMiddle() {
-  height: 413px;
-  width: 734px;
+@mixin itemParams() {
+  height: 31vw;
+  width: 54vw;
 }
 
 .swiper-button-prev,
@@ -30,20 +26,20 @@
   cursor: pointer;
   margin: auto;
   margin-top: 40px;
-  @include itemParamsBig();
+  @include itemParams();
   width: 100%;
   .item {
-    @include itemParamsBig();
+    @include itemParams();
     border-radius: 23px;
     overflow: hidden;
     img {
-      @include itemParamsBig();
+      @include itemParams();
       pointer-events: none;
     }
     .item_text {
       position: absolute;
-      top: 420px;
-      left: 50px;
+      top: 70%;
+      left: 5%;
       color: white;
     }
     .item_title {
@@ -51,7 +47,7 @@
       font-weight: 800;
       width: 700px;
 
-      font-size: 37px;
+      font-size: clamp(16px, 58vw, 37px);
     }
     .item_info {
       margin-top: 10px;

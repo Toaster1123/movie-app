@@ -20,7 +20,6 @@ export const SliderMain = () => {
   React.useEffect(() => {
     try {
       fetchData('4G89DHV-E8P4HZE-NVKHR5V-HH4C6D5');
-      // console.log(scrollItems);
     } catch (error) {
       console.log(error);
     }
@@ -38,7 +37,7 @@ export const SliderMain = () => {
         slidesPerView={2}
         navigation
         modules={[Navigation, Autoplay]}
-        // spaceBetween={200}
+        spaceBetween={200}
         loop
         autoplay={{
           delay: 12000,
