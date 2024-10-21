@@ -9,10 +9,15 @@ export const SliderItem = ({ item, height }) => {
       <div className={style[height]}>
         <img
           className={style.image}
-          src={item.backdrop.url || item.backdrop.preveiwUrl}
+          src={
+            height == 'imageBorderLow'
+              ? item.backdrop.url || item.backdrop.preveiwUrl
+              : item.poster.url || item.poster.preveiwUrl
+          }
           alt="заставка фильма"
         />
       </div>
+
       <div className={style.textBlock}>
         <div className={style.filmName}>{item.name}</div>
         <div className={style.text}>

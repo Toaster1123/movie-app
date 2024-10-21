@@ -1,7 +1,12 @@
-@mixin itemParams() {
+@mixin itemParamsBig() {
   height: 578px;
   width: 1030px;
 }
+@mixin itemParamsMiddle() {
+  height: 413px;
+  width: 734px;
+}
+
 .swiper-button-prev,
 .swiper-button-next {
   border-radius: 5px;
@@ -25,14 +30,14 @@
   cursor: pointer;
   margin: auto;
   margin-top: 40px;
-  @include itemParams();
+  @include itemParamsBig();
   width: 100%;
   .item {
-    @include itemParams();
+    @include itemParamsBig();
     border-radius: 23px;
     overflow: hidden;
     img {
-      @include itemParams();
+      @include itemParamsBig();
       pointer-events: none;
     }
     .item_text {

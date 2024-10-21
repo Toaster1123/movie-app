@@ -15,6 +15,7 @@ export const MainPage = () => {
   const NewFilms = useMovieNews((state) => state.data);
   const fetchReqCartoon = useMovieCartoons((state) => state.fetchItems);
   const cartoons = useMovieCartoons((state) => state.data);
+  console.log(cartoons);
   React.useEffect(() => {
     try {
       fetchReqBest('4G89DHV-E8P4HZE-NVKHR5V-HH4C6D5');

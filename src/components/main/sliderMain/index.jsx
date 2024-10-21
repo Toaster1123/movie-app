@@ -38,7 +38,7 @@ export const SliderMain = () => {
         slidesPerView={2}
         navigation
         modules={[Navigation, Autoplay]}
-        spaceBetween={200}
+        // spaceBetween={200}
         loop
         autoplay={{
           delay: 12000,
