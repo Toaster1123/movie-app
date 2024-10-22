@@ -7,17 +7,13 @@
 .ratingColorRed {
   background-color: #c90d0d;
 }
-@media screen and (man-width: 2200px) {
-  .image {
-    height: 100px;
-    width: 100px;
-  }
-}
+
 .main {
   transition: all 0.28s ease-in-out;
   cursor: pointer;
   margin-bottom: -68px;
   max-width: 325px;
+
   .imageBorderLow {
     height: 183px;
     width: 325px;
@@ -27,6 +23,16 @@
       border-radius: 16px;
     }
   }
+  // @media screen and (max-width: 1900px) {
+  //   .imageBorderLow {
+  //     height: 100px;
+  //     width: 100px;
+  //     .image {
+  //       height: 100px;
+  //       width: 100px;
+  //     }
+  //   }
+  // }
   .imageBorderBig {
     height: 500px;
     width: 325px;

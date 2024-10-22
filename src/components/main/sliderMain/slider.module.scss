@@ -38,7 +38,7 @@
     }
     .item_text {
       position: absolute;
-      top: 70%;
+      top: 74%;
       left: 5%;
       color: white;
     }
@@ -46,8 +46,8 @@
       font-family: sans-serif;
       font-weight: 800;
       width: 700px;
-
-      font-size: clamp(16px, 58vw, 37px);
+      line-height: 38px;
+      font-size: clamp(1rem, 0.738rem + 1.31vw, 2.313rem);
     }
     .item_info {
       margin-top: 10px;

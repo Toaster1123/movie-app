@@ -18,8 +18,13 @@ export const RecomendsMovie = (props) => {
           style={{
             '--swiper-navigation-color': '#fff',
           }}
-          slidesPerView={5.35}
-          slidesPerGroupSkip={4}
+          slidesPerView={4.35}
+          slidesPerGroup={4}
+          breakpoints={{
+            1310: {
+              slidesPerView: 4.2,
+            },
+          }}
           navigation
           modules={[Navigation]}
           spaceBetween={12}>
