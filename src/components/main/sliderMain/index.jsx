@@ -4,9 +4,6 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 
 import style from './slider.module.scss';
 
-import chooseColorRating from '../../../lib/chooseColorRating.js';
-import { setMovieLength } from '../../../lib/setMovieLength.js';
-
 import { FilmInfo } from '../../filmInfo/index.jsx';
 
 import { useMovieMainSwiper } from '../../../store/movieMainSlider.js';
