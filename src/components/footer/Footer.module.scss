@@ -1,34 +1,11 @@
 footer {
-  .contacts {
-    .socMedia {
-      display: flex;
-      list-style: none;
-      justify-content: space-between;
-      width: clamp(160px, 190px, 220px);
-      li {
-        cursor: pointer;
-        user-select: none;
-      }
-    }
-    .btn_help {
-      display: flex;
-      margin-top: 60px;
-      border: 1px solid #ffffff00;
-      margin-right: 12px;
-      padding: 10px 16px;
-      border: none;
-      font-size: 18px;
-      color: white;
-      border: 1.5px solid rgba(0, 0, 0, 0);
-      font-weight: 500;
-      background: linear-gradient(to top right, #2b0071, #4e00cc, #6f15ff);
-      border-radius: 12px;
-      cursor: pointer;
-      transition: 0.2s ease-in-out;
-      &:hover {
-        background: linear-gradient(to right, #2b0071, #5301d8, #6f15ff);
-        border: 1.5px solid white;
-      }
-    }
+  margin-left: 100px;
+  margin-right: 10vw;
+
+  .footer_top {
+    margin-bottom: 90px;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
   }
 }

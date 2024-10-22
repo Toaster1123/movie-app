@@ -11,16 +11,6 @@
   background-color: #7e7e7e71;
 }
 
-.ratingColorGreen {
-  background-color: #04942f;
-}
-.ratingColorOrange {
-  background-color: #cc780a;
-}
-.ratingColorRed {
-  background-color: #c90d0d;
-}
-
 .sliderMain {
   user-select: none;
   cursor: pointer;
@@ -47,31 +37,8 @@
       font-weight: 800;
       width: 700px;
       line-height: 38px;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
       font-size: clamp(1rem, 0.738rem + 1.31vw, 2.313rem);
-    }
-    .item_info {
-      margin-top: 10px;
-      display: flex;
-      font-family: sans-serif;
-      font-weight: 600;
-      font-size: 20px;
-      align-items: center;
-      .rating {
-        border-radius: 7px;
-        font-size: 18px;
-        margin-right: 14px;
-        padding: 5px 6px;
-      }
-      .year {
-        margin-right: 14px;
-      }
-      .genres {
-        margin-right: 14px;
-        display: flex;
-      }
-      .age {
-        margin-left: 14px;
-      }
     }
   }
 }

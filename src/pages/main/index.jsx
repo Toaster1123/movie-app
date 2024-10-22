@@ -1,26 +1,25 @@
 import React from 'react';
 
-import { SliderMain } from './sliderMain';
-import { AdvMain } from './advMain';
-import { RecomendsMovie } from './recomends';
+import { SliderMain } from '../../components/main/sliderMain/index.jsx';
+import { AdvMain } from '../../components/main/advMain/index.jsx';
+import { RecomendsMovie } from '../../components/recomends';
 
 import { useMovieBestFilms } from '../../store/movieRecomendBest.js';
 import { useMovieCartoons } from '../../store/movieRecCartoons.js';
 import { useMovieNews } from '../../store/movieRecNews.js';
 
-export const MainPage = () => {
+export const Home = () => {
   const fetchReqBest = useMovieBestFilms((state) => state.fetchItems);
   const bestFilms = useMovieBestFilms((state) => state.data);
   const fetchReqNews = useMovieNews((state) => state.fetchItems);
   const NewFilms = useMovieNews((state) => state.data);
   const fetchReqCartoon = useMovieCartoons((state) => state.fetchItems);
   const cartoons = useMovieCartoons((state) => state.data);
-  console.log(cartoons);
   React.useEffect(() => {
     try {
-      fetchReqBest('4G89DHV-E8P4HZE-NVKHR5V-HH4C6D5');
-      fetchReqNews('4G89DHV-E8P4HZE-NVKHR5V-HH4C6D5');
-      fetchReqCartoon('4G89DHV-E8P4HZE-NVKHR5V-HH4C6D5');
+      fetchReqBest('SMF2M17-D074329-QBAG7RZ-MBRR9QB');
+      fetchReqNews('SMF2M17-D074329-QBAG7RZ-MBRR9QB');
+      fetchReqCartoon('SMF2M17-D074329-QBAG7RZ-MBRR9QB');
     } catch (error) {
       console.log(error);
     }

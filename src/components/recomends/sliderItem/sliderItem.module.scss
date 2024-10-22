@@ -1,13 +1,3 @@
-.ratingColorGreen {
-  background-color: #04942f;
-}
-.ratingColorOrange {
-  background-color: #cc780a;
-}
-.ratingColorRed {
-  background-color: #c90d0d;
-}
-
 .main {
   transition: all 0.28s ease-in-out;
   cursor: pointer;
@@ -57,28 +47,7 @@
       margin-top: 7px;
       margin-bottom: 6px;
     }
-    .text {
-      align-items: center;
-      display: flex;
-      flex-direction: row;
 
-      .rating {
-        border-radius: 5px;
-        font-size: 11px;
-        margin-right: 7px;
-        padding: 5px 4px;
-      }
-      .year {
-        margin-right: 8px;
-      }
-      .genres {
-        margin-right: 8px;
-        display: flex;
-      }
-      .age {
-        margin-left: 8px;
-      }
-    }
     .buttons {
       .btnMore {
         margin-top: 8px;

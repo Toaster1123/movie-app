@@ -8,7 +8,6 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 
 export const RecomendsMovie = (props) => {
-  console.log(props);
   return (
     <div className={style.main}>
       <section className={style.NameOfRec}>{props.title}</section>
@@ -18,11 +17,14 @@ export const RecomendsMovie = (props) => {
           style={{
             '--swiper-navigation-color': '#fff',
           }}
-          slidesPerView={4.35}
+          slidesPerView={5.35}
           slidesPerGroup={4}
           breakpoints={{
-            1310: {
-              slidesPerView: 4.2,
+            1410: {
+              slidesPerView: 4.3,
+            },
+            1800: {
+              slidesPerView: 5.35,
             },
           }}
           navigation

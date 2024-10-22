@@ -1,0 +1,35 @@
+.contacts {
+  .socMedia {
+    display: flex;
+    list-style: none;
+    justify-content: space-between;
+    width: clamp(160px, 190px, 220px);
+    li {
+      cursor: pointer;
+      user-select: none;
+    }
+  }
+  .btn_help {
+    display: flex;
+    margin-top: 40px;
+    border: 1px solid #ffffff00;
+    margin-right: 12px;
+    padding: 8px 14px;
+    border: none;
+    font-size: 18px;
+    color: white;
+    border: 1.5px solid rgba(0, 0, 0, 0);
+    font-weight: 600;
+    background: linear-gradient(to top right, #2b0071, #4e00cc, #6f15ff);
+    border-radius: 12px;
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+    div {
+      margin-left: 6px;
+    }
+    &:hover {
+      background: linear-gradient(to right, #2b0071, #5301d8, #6f15ff);
+      border: 1.5px solid white;
+    }
+  }
+}

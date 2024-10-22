@@ -1,0 +1,42 @@
+.ratingColorGreen {
+  background-color: #04942f;
+}
+.ratingColorOrange {
+  background-color: #cc780a;
+}
+.ratingColorRed {
+  background-color: #c90d0d;
+}
+
+.text {
+  align-items: center;
+  font-family: sans-serif;
+  display: flex;
+  flex-direction: row;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+
+  &BigSize {
+    font-size: 21px;
+  }
+  .rating {
+    border-radius: 5px;
+    font-size: 11px;
+    margin-right: 7px;
+    text-shadow: none;
+    padding: 5px 4px;
+    &BigSize {
+      font-weight: 600;
+      font-size: 16px;
+    }
+  }
+  .year {
+    margin-right: 8px;
+  }
+  .genres {
+    margin-right: 8px;
+    display: flex;
+  }
+  .age {
+    margin-left: 8px;
+  }
+}

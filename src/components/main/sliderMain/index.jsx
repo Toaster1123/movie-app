@@ -7,6 +7,8 @@ import style from './slider.module.scss';
 import chooseColorRating from '../../../lib/chooseColorRating.js';
 import { setMovieLength } from '../../../lib/setMovieLength.js';
 
+import { FilmInfo } from '../../filmInfo/index.jsx';
+
 import { useMovieMainSwiper } from '../../../store/movieMainSlider.js';
 
 import 'swiper/css';
@@ -19,7 +21,7 @@ export const SliderMain = () => {
 
   React.useEffect(() => {
     try {
-      fetchData('4G89DHV-E8P4HZE-NVKHR5V-HH4C6D5');
+      fetchData('SMF2M17-D074329-QBAG7RZ-MBRR9QB');
     } catch (error) {
       console.log(error);
     }
@@ -28,6 +30,7 @@ export const SliderMain = () => {
   if (useMovieMainSwiper((state) => state.loading)) {
     return;
   }
+
   return (
     <section className={style.sliderMain}>
       <Swiper
@@ -51,17 +54,7 @@ export const SliderMain = () => {
                 <img src={item.backdrop.url} />
                 <div className={style.item_text}>
                   <div className={style.item_title}>{item.name}</div>
-                  <div className={style.item_info}>
-                    <div className={`${style.rating} ${style[chooseColorRating(item.rating.kp)]}`}>
-                      {item.rating.kp.toFixed(1)}
-                    </div>
-                    <div className={style.year}>{item.year}</div>
-                    <div className={style.genres}>{item.genres[0].name}</div>
-                    <div className={style.length}>
-                      {setMovieLength(item.movieLength || item.seriesLength)}
-                    </div>
-                    <div className={style.age}>{item.ageRating && item.ageRating + '+'} </div>
-                  </div>
+                  <FilmInfo size={'textSize'} item={item} />
                 </div>
               </div>
             </SwiperSlide>

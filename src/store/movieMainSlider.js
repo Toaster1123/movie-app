@@ -8,7 +8,7 @@ export const useMovieMainSwiper = create((set) => ({
     try {
       set({ loading: true });
       const data = await axios.get(
-        'https://api.kinopoisk.dev/v1.4/movie?notNullFields=backdrop.url&notNullFields=movieLength',
+        'https://api.kinopoisk.dev/v1.4/movie?notNullFields=backdrop.url&notNullFields=movieLength&genres.name=!документальный&genres.name=!мультфильм',
         {
           headers: {
             'X-API-KEY': key,
@@ -16,6 +16,7 @@ export const useMovieMainSwiper = create((set) => ({
           },
           params: {
             limit: 12,
+            movieLength: '60-300',
             'countries.name': 'Россия',
             'rating.kp': '6 - 10',
           },
