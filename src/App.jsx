@@ -3,6 +3,8 @@ import { Route, Routes } from 'react-router-dom';
 
 import { Header } from './components/header';
 import { Footer } from './components/footer';
+
+import { FilmPage } from './pages/filmPage';
 import { Home } from './pages/main';
 function App() {
   return (
@@ -10,6 +12,7 @@ function App() {
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/film/:id" element={<FilmPage />} />
       </Routes>
       <Footer />
     </div>
