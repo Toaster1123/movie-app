@@ -1,0 +1,22 @@
+.text {
+  width: 45vw;
+  font-size: 19px;
+  font-family: sans-serif;
+  line-height: 26px;
+  color: #ababab;
+  font-weight: bold;
+  height: 160px;
+
+  div {
+    height: 160px;
+    -webkit-line-clamp: 6;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .showMore {
+    // margin-top: 12px;
+    cursor: pointer;
+    color: #8776f9;
+  }
+}

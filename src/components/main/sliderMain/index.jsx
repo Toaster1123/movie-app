@@ -35,6 +35,7 @@ export const SliderMain = () => {
           '--swiper-navigation-color': '#fff',
         }}
         slidesPerView={2}
+        speed={800}
         navigation
         modules={[Navigation, Autoplay]}
         spaceBetween={200}

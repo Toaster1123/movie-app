@@ -1,0 +1,122 @@
+.filmImage {
+  width: 100%;
+  color: #d2d2d2;
+}
+.img {
+  margin-top: 20px;
+  width: 100%;
+  height: 83vh;
+  .gradientLeft::before {
+    content: '';
+    width: 100%;
+    height: 83vh;
+    position: absolute;
+    background: linear-gradient(to right, #000000, #00000097, #0000000b);
+  }
+  .gradientBottom::before {
+    content: '';
+    width: 100%;
+    height: 83vh;
+    position: absolute;
+    background: linear-gradient(to top, #000000, #00000000, #00000000);
+  }
+  img {
+    z-index: -1;
+    pointer-events: none;
+    width: 100%;
+    height: 100%;
+  }
+}
+.mainInfo {
+  z-index: 2;
+  position: absolute;
+  left: 150px;
+  top: 43vh;
+  width: 40vw;
+  font-size: 21px;
+  font-family: sans-serif;
+  .filmName {
+    color: #dcdcdc;
+
+    font-size: 38px;
+    margin-bottom: 30px;
+    font-weight: bold;
+  }
+  .shortDesc {
+    margin-top: 6px;
+  }
+  .persons {
+    margin: 32px 0;
+    .members {
+      display: flex;
+      .role {
+        color: #9d9d9d;
+      }
+      .names {
+        margin-left: 14px;
+      }
+    }
+  }
+  .price {
+    .advYellowPrice {
+      color: #f8db05;
+      font-weight: 600;
+      font-size: 1.2em;
+    }
+    .advPrice {
+      font-size: 22px;
+      margin-top: 5px;
+      display: flex;
+      img {
+        margin-left: 10px;
+        height: 30px;
+        width: 80px;
+      }
+    }
+  }
+  .btns {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 30px;
+    .buttonBuy {
+      border: 1px solid #ffffff00;
+      margin-right: 12px;
+      padding: 16px;
+      color: white;
+      border: none;
+      font-size: 19px;
+      border: 1.5px solid rgba(0, 0, 0, 0);
+      font-weight: 600;
+      background: linear-gradient(to top right, #2b0071, #4e00cc, #6f15ff);
+      border-radius: 13px;
+      cursor: pointer;
+      transition: 0.2s ease-in-out;
+      &:hover {
+        background: linear-gradient(to right, #2b0071, #5301d8, #6f15ff);
+        border: 1.5px solid white;
+      }
+    }
+    .trailer {
+      height: 56px;
+      border: 1px solid #ffffff00;
+      margin-right: 12px;
+      padding: 16px 20px;
+      color: white;
+      border: none;
+      font-size: 19px;
+      border: 1.5px solid rgba(0, 0, 0, 0);
+      font-weight: 600;
+      background: #303030;
+      border-radius: 13px;
+      cursor: pointer;
+      transition: 0.2s ease-in-out;
+      &:hover {
+        border: 1.5px solid white;
+      }
+    }
+    .trailer:last-of-type {
+      padding: 16px;
+    }
+  }
+}

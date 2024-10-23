@@ -9,7 +9,7 @@ export const Header = () => {
     <header>
       <div className={style.header}>
         <div className={style.headerLeft}>
-          <img src="./img/logo.png" alt="Логотип" height={50} width={50} />
+          <img src="/./img/logo.png" alt="Логотип" height={50} width={50} />
           <div className={style.genres}>
             {genres.map((item, id) => {
               return (

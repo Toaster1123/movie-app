@@ -1,0 +1,28 @@
+.main {
+  background-color: #101011;
+  font-family: sans-serif;
+  padding: 40px;
+  font-size: 20px;
+  border-radius: 18px;
+
+  h4 {
+    margin-top: 10px;
+    color: rgba(255, 255, 255, 0.56);
+  }
+  .stars {
+    display: flex;
+    .starBlock {
+      background-color: #8b889252;
+      height: 56px;
+      width: 56px;
+      display: flex;
+      margin-top: 26px;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      &:not(:last-of-type) {
+        margin-right: 10px;
+      }
+    }
+  }
+}

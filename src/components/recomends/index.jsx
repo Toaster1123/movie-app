@@ -19,6 +19,7 @@ export const RecomendsMovie = (props) => {
           }}
           slidesPerView={5.35}
           slidesPerGroup={4}
+          speed={600}
           breakpoints={{
             1410: {
               slidesPerView: 4.3,
