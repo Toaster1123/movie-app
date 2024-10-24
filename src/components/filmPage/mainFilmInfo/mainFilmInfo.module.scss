@@ -23,15 +23,15 @@
   img {
     z-index: -1;
     pointer-events: none;
-    width: 100%;
+    min-width: 100%;
     height: 100%;
   }
 }
 .mainInfo {
   z-index: 2;
   position: absolute;
-  left: 150px;
-  top: 43vh;
+  left: calc(4.7vw + 1vw);
+  top: 30vh;
   width: 40vw;
   font-size: 21px;
   font-family: sans-serif;

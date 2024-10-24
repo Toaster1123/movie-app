@@ -1,27 +1,44 @@
 .main {
   background-color: #101011;
   font-family: sans-serif;
-  padding: 40px;
-  font-size: 20px;
+  padding: 2vw;
+  font-size: 1.1vw;
   border-radius: 18px;
+  max-width: 37vw;
+  h3 {
+    // font-size: 1.2vw;
 
-  h4 {
-    margin-top: 10px;
-    color: rgba(255, 255, 255, 0.56);
+    margin-top: 8px;
+    color: rgba(255, 255, 255, 0.45);
   }
   .stars {
     display: flex;
+    margin-top: 26px;
     .starBlock {
-      background-color: #8b889252;
       height: 56px;
+      fill: #8b88927c;
       width: 56px;
       display: flex;
-      margin-top: 26px;
       justify-content: center;
       align-items: center;
       cursor: pointer;
       &:not(:last-of-type) {
         margin-right: 10px;
+      }
+      .svg {
+        // background-color: #8b889252;
+        height: 100%;
+        width: 100%;
+        transition: 0.2s ease-in-out;
+        &Active {
+          fill: #e3e0eadf;
+        }
+      }
+      .count {
+        font-size: 0.9vw;
+        color: #080808;
+        font-weight: bold;
+        position: absolute;
       }
     }
   }
