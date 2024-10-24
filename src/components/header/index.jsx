@@ -1,6 +1,8 @@
 import React from 'react';
-import style from './header.module.scss';
 import { Search, CircleUserRound } from 'lucide-react';
+import { Link } from 'react-router-dom';
+
+import style from './header.module.scss';
 
 const genres = ['Главная', 'Фильмы', 'Сериалы', 'Мультфильмы'];
 export const Header = () => {
@@ -9,7 +11,9 @@ export const Header = () => {
     <header>
       <div className={style.header}>
         <div className={style.headerLeft}>
-          <img src="/./img/logo.png" alt="Логотип" height={50} width={50} />
+          <Link to="/">
+            <img src="/./img/logo.png" alt="Логотип" height={50} width={50} />
+          </Link>
           <div className={style.genres}>
             {genres.map((item, id) => {
               return (

@@ -4,8 +4,6 @@ import { setMovieLength } from '../../lib/setMovieLength';
 import style from './filmInfo.module.scss';
 
 export const FilmInfo = ({ item, size }) => {
-  console.log(size);
-  console.log('item', item);
   const rand = () => {
     return ((Math.random() * (100 - 1) + 1) / 10).toFixed(1);
   };

@@ -4,6 +4,9 @@ import style from './sliderItem.module.scss';
 import { FilmInfo } from '../../filmInfo';
 
 export const SliderItem = ({ item, height }) => {
+  if (height == undefined) {
+    height = 'imageBorderLow';
+  }
   return (
     <div className={style.main}>
       <div className={style[height]}>

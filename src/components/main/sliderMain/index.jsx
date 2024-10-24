@@ -1,6 +1,7 @@
 import React from 'react';
 import { Navigation, Autoplay } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
+import { Link } from 'react-router-dom';
 
 import style from './slider.module.scss';
 
@@ -27,7 +28,6 @@ export const SliderMain = () => {
   if (useMovieMainSwiper((state) => state.loading)) {
     return;
   }
-
   return (
     <section className={style.sliderMain}>
       <Swiper
@@ -48,13 +48,15 @@ export const SliderMain = () => {
         {scrollItems.map((item, id) => {
           return (
             <SwiperSlide key={id}>
-              <div className={style.item}>
-                <img src={item.backdrop.url} />
-                <div className={style.item_text}>
-                  <div className={style.item_title}>{item.name}</div>
-                  <FilmInfo size={'textSize'} item={item} />
+              <Link to={`/film/${item.id}`}>
+                <div className={style.item}>
+                  <img src={item.backdrop.url} />
+                  <div className={style.item_text}>
+                    <div className={style.item_title}>{item.name}</div>
+                    <FilmInfo size={'textSize'} item={item} />
+                  </div>
                 </div>
-              </div>
+              </Link>
             </SwiperSlide>
           );
         })}

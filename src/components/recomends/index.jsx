@@ -1,6 +1,7 @@
 import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation } from 'swiper/modules';
+import { Link } from 'react-router-dom';
 
 import style from './Rec.module.scss';
 import { SliderItem } from './sliderItem';
@@ -35,7 +36,9 @@ export const RecomendsMovie = (props) => {
             props.filmsData.map((item, id) => {
               return (
                 <SwiperSlide key={id}>
-                  <SliderItem item={item} height={props.height} />
+                  <Link to={`/film/${item.id}`}>
+                    <SliderItem item={item} height={props.height} />
+                  </Link>
                 </SwiperSlide>
               );
             })}
