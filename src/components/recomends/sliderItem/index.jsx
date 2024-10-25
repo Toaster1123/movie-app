@@ -23,7 +23,6 @@ export const SliderItem = ({ item, height }) => {
 
       <div className={style.textBlock}>
         <div className={style.filmName}>{item.name}</div>
-
         <FilmInfo item={item} />
         <div className={style.buttons}>
           <div className={style.btnMore}>Подробнее</div>

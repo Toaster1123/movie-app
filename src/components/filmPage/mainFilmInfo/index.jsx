@@ -6,15 +6,17 @@ import { useMovieItem } from '../../../store/movieItem';
 import { FilmInfo } from '../../filmInfo';
 
 import style from './mainFilmInfo.module.scss';
+
 export const MainFilmInfo = () => {
   const { id } = useParams();
   const fetchData = useMovieItem((state) => state.fetchItems);
   const movieItem = useMovieItem((state) => state.movieItem);
   const loading = useMovieItem((state) => state.loading);
+  console.log(movieItem?.persons?.[1]);
 
   React.useEffect(() => {
     try {
-      fetchData('SMF2M17-D074329-QBAG7RZ-MBRR9QB', id);
+      fetchData(id);
     } catch (error) {
       console.log(error);
     }
@@ -39,11 +41,23 @@ export const MainFilmInfo = () => {
             <div className={style.persons}>
               <div className={style.members}>
                 <div className={style.role}>Режисер: </div>
-                <div className={style.names}>Женя Головин</div>
+                <div className={style.names}>{movieItem?.persons?.[1].name}</div>
               </div>
               <div className={style.members}>
                 <div className={style.role}>Актёры: </div>
-                <div className={style.names}>Надежда Аникеева</div>
+                <div className={style.names}>
+                  {movieItem?.persons?.map((item, id) => {
+                    if (id >= 3) {
+                      return;
+                    }
+                    return (
+                      <span key={id} className={style.name}>
+                        {item.name}
+                        {id == 2 ? '' : ','}
+                      </span>
+                    );
+                  })}
+                </div>
               </div>
             </div>
             <div className={style.price}>

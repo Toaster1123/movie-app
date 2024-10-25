@@ -9,6 +9,8 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 
 export const RecomendsMovie = (props) => {
+  console.log(props);
+  // console.log(props.props.title);
   return (
     <div className={style.main}>
       <section className={style.NameOfRec}>{props.title}</section>

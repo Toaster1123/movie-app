@@ -16,10 +16,9 @@ import 'swiper/css/navigation';
 export const SliderMain = () => {
   const scrollItems = useMovieMainSwiper((state) => state.dataMainSwiper);
   const fetchData = useMovieMainSwiper((state) => state.fetchItems);
-
   React.useEffect(() => {
     try {
-      fetchData('SMF2M17-D074329-QBAG7RZ-MBRR9QB');
+      fetchData();
     } catch (error) {
       console.log(error);
     }
@@ -41,7 +40,7 @@ export const SliderMain = () => {
         spaceBetween={200}
         loop
         autoplay={{
-          delay: 12000,
+          delay: 14000,
           disableOnInteraction: false,
         }}
         centeredSlides>

@@ -17,9 +17,9 @@ export const Home = () => {
   const cartoons = useMovieCartoons((state) => state.data);
   React.useEffect(() => {
     try {
-      fetchReqBest('SMF2M17-D074329-QBAG7RZ-MBRR9QB');
-      fetchReqNews('SMF2M17-D074329-QBAG7RZ-MBRR9QB');
-      fetchReqCartoon('SMF2M17-D074329-QBAG7RZ-MBRR9QB');
+      fetchReqBest();
+      fetchReqNews();
+      fetchReqCartoon();
     } catch (error) {
       console.log(error);
     }

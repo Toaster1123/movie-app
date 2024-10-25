@@ -7,10 +7,25 @@ body {
   background-color: #040404;
   color: white;
 }
-.swiper-button-prev,
-.swiper-button-next {
+.swiper-button-next,
+.swiper-button-prev {
   border-radius: 5px;
   height: 70px;
   width: 50px;
   background-color: #7e7e7e71;
+  opacity: 0;
+  transition: 0.16s ease-in-out;
+}
+
+.swiper-button-disabled {
+  visibility: hidden;
+  opacity: 0;
+}
+.swiper {
+  &:hover {
+    .swiper-button-next,
+    .swiper-button-prev {
+      opacity: 1;
+    }
+  }
 }
