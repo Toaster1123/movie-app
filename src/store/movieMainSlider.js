@@ -11,7 +11,7 @@ export const useMovieMainSwiper = create((set) => ({
         'https://api.kinopoisk.dev/v1.4/movie?notNullFields=backdrop.url&notNullFields=movieLength&genres.name=!документальный&genres.name=!мультфильм',
         {
           headers: {
-            'X-API-KEY': '4G89DHV-E8P4HZE-NVKHR5V-HH4C6D5',
+            'X-API-KEY': 'QXH7WES-08KMJYM-NW88RJH-KGZSCMQ',
             'Content-Type': 'application/json',
           },
           params: {
