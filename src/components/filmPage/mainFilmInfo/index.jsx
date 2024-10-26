@@ -12,7 +12,6 @@ export const MainFilmInfo = () => {
   const fetchData = useMovieItem((state) => state.fetchItems);
   const movieItem = useMovieItem((state) => state.movieItem);
   const loading = useMovieItem((state) => state.loading);
-  console.log(movieItem?.persons?.[1]);
 
   React.useEffect(() => {
     try {
@@ -21,7 +20,6 @@ export const MainFilmInfo = () => {
       console.log(error);
     }
   }, []);
-  console.log(movieItem);
 
   return (
     <>
@@ -41,24 +39,28 @@ export const MainFilmInfo = () => {
             <div className={style.persons}>
               <div className={style.members}>
                 <div className={style.role}>Режисер: </div>
-                <div className={style.names}>{movieItem?.persons?.[1].name}</div>
-              </div>
-              <div className={style.members}>
-                <div className={style.role}>Актёры: </div>
                 <div className={style.names}>
-                  {movieItem?.persons?.map((item, id) => {
-                    if (id >= 3) {
-                      return;
-                    }
-                    return (
-                      <span key={id} className={style.name}>
-                        {item.name}
-                        {id == 2 ? '' : ','}
-                      </span>
-                    );
-                  })}
+                  {movieItem?.persons[movieItem.persons.length - 1].name}
                 </div>
               </div>
+              {movieItem.type !== 'cartoon' && (
+                <div className={style.members}>
+                  <div className={style.role}>Актёры: </div>
+                  <div className={style.names}>
+                    {movieItem?.persons?.map((item, id) => {
+                      if (id >= 3) {
+                        return;
+                      }
+                      return (
+                        <span key={id} className={style.name}>
+                          {item.name}
+                          {id == 2 ? '' : ','}
+                        </span>
+                      );
+                    })}
+                  </div>
+                </div>
+              )}
             </div>
             <div className={style.price}>
               <div className={style.advYellowPrice}>Месяц за 1 ₽, затем месяц за 99 ₽</div>

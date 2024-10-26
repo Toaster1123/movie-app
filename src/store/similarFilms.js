@@ -8,7 +8,7 @@ export const useSimilarFilms = create((set) => ({
     try {
       set({ loading: true });
       const data = await axios.get(
-        `https://api.kinopoisk.dev/v1.4/movie?similarMovies.${id}&notNullFields=name&notNullFields=backdrop.url`,
+        `https://api.kinopoisk.dev/v1.4/movie?similarMovies.id=${id}&notNullFields=name&notNullFields=backdrop.url`,
         {
           headers: {
             'X-API-KEY': '4G89DHV-E8P4HZE-NVKHR5V-HH4C6D5',
