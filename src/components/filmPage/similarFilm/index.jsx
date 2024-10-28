@@ -17,12 +17,12 @@ export const SimilarFilm = () => {
     } catch (error) {
       console.log(error);
     }
-  }, []);
+  }, [id]);
 
-  const similarFilmData = { title: 'Новинки', height: 'imageBorderLow', filmsData: similarMovies };
+  const similarFilmData = { title: 'Похожие', height: 'imageBorderLow', filmsData: similarMovies };
   return (
     <div className={style.main}>
-      <RecomendsMovie {...similarFilmData} />
+      <RecomendsMovie {...similarFilmData} loading={useSimilarFilms((state) => state.loading)} />
     </div>
   );
 };

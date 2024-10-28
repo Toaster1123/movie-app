@@ -26,16 +26,31 @@ export const Home = () => {
   }, []);
 
   const renderSliderParams = [
-    { title: 'Лучшие фильмы Самарской области', height: 'imageBorderLow', filmsData: bestFilms },
-    { title: 'Мультики', height: 'imageBorderLow', filmsData: cartoons },
-    { title: 'Новинки', height: 'imageBorderBig', filmsData: NewFilms },
+    {
+      title: 'Лучшие фильмы Самарской области',
+      height: 'imageBorderLow',
+      filmsData: bestFilms,
+      loading: useMovieBestFilms((state) => state.loading),
+    },
+    {
+      title: 'Мультики',
+      height: 'imageBorderLow',
+      filmsData: cartoons,
+      loading: useMovieNews((state) => state.loading),
+    },
+    {
+      title: 'Новинки',
+      height: 'imageBorderBig',
+      filmsData: NewFilms,
+      loading: useMovieCartoons((state) => state.loading),
+    },
   ];
   return (
     <div>
       <SliderMain />
       <AdvMain />
       {renderSliderParams.map((item) => {
-        return <RecomendsMovie key={item.title} {...item} />;
+        return <RecomendsMovie key={item.title} {...item} loading={item.loading} />;
       })}
     </div>
   );

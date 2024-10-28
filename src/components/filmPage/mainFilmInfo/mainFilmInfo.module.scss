@@ -1,6 +1,7 @@
 .filmImage {
   width: 100%;
   color: #d2d2d2;
+  height: 83vh;
 }
 .img {
   margin-top: 20px;
@@ -34,7 +35,7 @@
 .mainInfo {
   z-index: 2;
   position: absolute;
-  left: calc(4.7vw + 1vw);
+  left: 4.7vw;
   top: 30vh;
   width: 40vw;
   font-size: 21px;

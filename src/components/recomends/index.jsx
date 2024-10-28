@@ -1,7 +1,7 @@
 import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation } from 'swiper/modules';
-import { Link } from 'react-router-dom';
+import ContentLoader from 'react-content-loader';
 
 import style from './Rec.module.scss';
 import { SliderItem } from './sliderItem';
@@ -9,12 +9,25 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 
 export const RecomendsMovie = (props) => {
+  const loading = props.loading;
   return (
     <div className={style.main}>
-      <section className={style.NameOfRec}>{props.title}</section>
+      <section className={style.NameOfRec}>
+        {loading ? (
+          <ContentLoader
+            speed={2.3}
+            width={325}
+            height={40}
+            backgroundColor="#111"
+            foregroundColor="#4d4d4d">
+            <rect x="0" y="0" rx="16" ry="16" width="325" height="40" />
+          </ContentLoader>
+        ) : (
+          props.title
+        )}
+      </section>
       <section>
         <Swiper
-          className={style.swiper}
           style={{
             '--swiper-navigation-color': '#fff',
           }}
@@ -22,7 +35,7 @@ export const RecomendsMovie = (props) => {
           slidesPerGroup={4}
           speed={600}
           breakpoints={{
-            1410: {
+            1310: {
               slidesPerView: 4.3,
             },
             1800: {
@@ -32,18 +45,16 @@ export const RecomendsMovie = (props) => {
           navigation
           modules={[Navigation]}
           spaceBetween={12}>
-          {props.filmsData != undefined &&
-            props.filmsData.map((item, id) => {
-              return (
-                <SwiperSlide key={id}>
-                  <Link to={`/film/${item.id}`}>
-                    <SliderItem item={item} height={props.height} />
-                  </Link>
-                </SwiperSlide>
-              );
-            })}
+          {(loading ? [...Array(5)] : props.filmsData).map((item, id) => {
+            return (
+              <SwiperSlide className={style.SwiperSlide} key={id}>
+                <SliderItem item={item} height={props.height} loading={loading} />
+              </SwiperSlide>
+            );
+          })}
         </Swiper>
       </section>
     </div>
   );
 };
+// props.filmsData != undefined

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Bookmark } from 'lucide-react';
 import { useParams } from 'react-router-dom';
+import ContentLoader from 'react-content-loader';
 
 import { useMovieItem } from '../../../store/movieItem';
 import { FilmInfo } from '../../filmInfo';
@@ -19,12 +20,27 @@ export const MainFilmInfo = () => {
     } catch (error) {
       console.log(error);
     }
-  }, []);
+  }, [id]);
 
   return (
     <>
       {loading ? (
-        ''
+        <div className={style.filmImage}>
+          <ContentLoader
+            className={style.mainInfo}
+            speed={2.3}
+            width={768}
+            height={417}
+            backgroundColor="#111"
+            foregroundColor="#4d4d4d">
+            <rect x="0" y="0" rx="12" ry="12" width="600" height="47" />
+            <rect x="0" y="55" rx="12" ry="12" width="400" height="25" />
+            <rect x="0" y="93" rx="12" ry="12" width="700" height="50" />
+            <rect x="0" y="158" rx="12" ry="12" width="400" height="50" />
+            <rect x="0" y="226" rx="12" ry="12" width="600" height="60" />
+            <rect x="0" y="320" rx="12" ry="12" width="600" height="50" />
+          </ContentLoader>
+        </div>
       ) : (
         <div className={style.filmImage}>
           <div className={style.img}>
@@ -40,7 +56,9 @@ export const MainFilmInfo = () => {
               <div className={style.members}>
                 <div className={style.role}>Режисер: </div>
                 <div className={style.names}>
-                  {movieItem?.persons[movieItem.persons.length - 1].name}
+                  <span className={style.name}>
+                    {movieItem?.persons[movieItem.persons.length - 1].name}
+                  </span>
                 </div>
               </div>
               {movieItem.type !== 'cartoon' && (
@@ -53,7 +71,7 @@ export const MainFilmInfo = () => {
                       }
                       return (
                         <span key={id} className={style.name}>
-                          {item.name}
+                          {item.name == null ? item.enName : item.name}
                           {id == 2 ? '' : ','}
                         </span>
                       );

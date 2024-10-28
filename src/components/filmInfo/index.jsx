@@ -19,7 +19,7 @@ export const FilmInfo = ({ item, size }) => {
       <div className={style.year}>{item.year}</div>
       <div className={style.genres}>{item.genres != null && item.genres[0].name}</div>
       <div className={style.length}>{setMovieLength(item.movieLength || item.seriesLength)}</div>
-      <div className={style.age}>{item.ageRating + '+'} </div>
+      <div className={style.age}>{item.ageRating != null && item.ageRating + '+'} </div>
     </div>
   );
 };
