@@ -12,13 +12,15 @@ export const PersonsMain = () => {
   const loading = useMovieItem((state) => state.loading);
   const persons = useMovieItem((state) => state.movieItem.persons);
 
-  persons?.sort((a, b) => {
-    return a.profession == 'актеры' ? 1 : b.profession ? -1 : 0;
-  });
-  persons?.sort((a, b) => {
-    return a.profession == 'режиссеры' ? -1 : b.profession ? 1 : 0;
-  });
-
+  persons
+    ?.sort((a, b) => {
+      return a.profession == 'актеры' ? 1 : b.profession ? -1 : 0;
+    })
+    .sort((a, b) => {
+      return a.profession == 'режиссеры' ? -1 : b.profession ? 1 : 0;
+    });
+  // const compressPersons = 'd';
+  // console.log(compressPersons);
   return (
     <div className={style.main}>
       <section className={style.name}>

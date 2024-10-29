@@ -1,8 +1,13 @@
 .main {
   margin-bottom: 68px;
+  margin-left: -4.7vw;
   .name {
     font-size: 23px;
     font-weight: 600;
     margin-bottom: 16px;
+    margin-left: 4.7vw;
+  }
+  .SwiperSlide:first-child {
+    margin-left: 4.7vw;
   }
 }

@@ -1,0 +1,20 @@
+.main {
+  margin-top: 14px;
+  .continue {
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+    color: rgba(255, 255, 255, 0.9);
+    border: 0;
+    background-color: rgba(102, 21, 137, 0.781);
+    width: 296px;
+    padding: 13px 16px;
+    border-radius: 20px;
+    font-size: 16px;
+    &:hover {
+      background-color: lighten(rgba(102, 21, 137, 0.781), 7);
+    }
+    &:active {
+      background-color: darken(rgba(102, 21, 137, 0.781), 7);
+    }
+  }
+}

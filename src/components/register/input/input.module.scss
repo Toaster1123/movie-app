@@ -1,0 +1,39 @@
+.main {
+  .inputBlock {
+    margin: 0 80px;
+    // align-items: center;
+    &:not(:last-child) {
+      margin-bottom: 30px;
+    }
+    .input {
+      position: relative;
+      & input {
+        color: #c7c7c7;
+        width: 260px;
+        padding: 16px;
+        border-radius: 15px;
+        font-size: 16px;
+        border: 2px solid gray;
+        background-color: rgba(0, 0, 0, 0.148);
+      }
+      .svg {
+        position: absolute;
+        cursor: pointer;
+        left: 257px;
+        top: 14px;
+        transition: 0.17s ease-in-out;
+        border-radius: 20%;
+        &:hover {
+          color: black;
+          background-color: rgb(77, 77, 77);
+        }
+      }
+    }
+    .title {
+      display: flex;
+      justify-content: start;
+      margin-bottom: 8px;
+      padding-left: 7px;
+    }
+  }
+}

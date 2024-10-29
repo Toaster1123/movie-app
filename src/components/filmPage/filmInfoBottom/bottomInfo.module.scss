@@ -8,8 +8,12 @@
   .infoBlock {
     color: #ffffffdb;
     min-width: 300px;
+    max-width: 550px;
+    &:first-child {
+      max-width: 400px;
+    }
     &:not(:last-child) {
-      padding-right: 200px;
+      padding-right: 140px;
     }
     .title {
       font-size: 30px;
@@ -23,6 +27,9 @@
       }
       .itemTitle {
         color: #ffffff80;
+      }
+      .itemParams {
+        cursor: pointer;
       }
     }
   }

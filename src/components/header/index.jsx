@@ -2,10 +2,16 @@ import React from 'react';
 import { Search, CircleUserRound } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
+import { isOpened } from '../../store/openUser';
+
 import style from './header.module.scss';
 
 const genres = ['Главная', 'Фильмы', 'Сериалы', 'Мультфильмы'];
 export const Header = () => {
+  const opened = isOpened((state) => state.opened);
+  const setOpened = isOpened((state) => state.setOpened);
+
+  console.log(opened);
   const [currentGenres, setCurrentGenres] = React.useState(0);
   return (
     <header>
@@ -33,8 +39,12 @@ export const Header = () => {
           <div>
             <Search className={style.search} />
           </div>
-          <div className={style.user}>
-            <CircleUserRound className={style.user} />
+          <div
+            onClick={() => {
+              setOpened(true);
+            }}
+            className={style.user}>
+            <CircleUserRound />
             <span>Войти</span>
           </div>
         </div>
