@@ -1,5 +1,6 @@
 import React from 'react';
 import ContentLoader from 'react-content-loader';
+import { Link } from 'react-router-dom';
 
 import style from './personItem.module.scss';
 
@@ -17,20 +18,19 @@ export const PersonItem = (props) => {
         </ContentLoader>
       ) : (
         <>
-          {/* <Link to={`/film/${item.id}`}> */}
-          <div className={style.image}>
-            <img src={props.item.photo} width={'100%'} alt="Актёр" />
-          </div>
-          <div className={style.nameBlock}>
-            <div className={style.name}>
-              {props.item.name != null ? props.item.name : props.item.enName}
+          <Link to={`/person/${props.item.id}`}>
+            <div className={style.image}>
+              <img src={props.item.photo} width={'100%'} alt="Актёр" />
             </div>
-            <div className={style.role}>
-              {props.item.profession != 'актеры' &&
-                props.item.profession.substring(0, props.item.profession.length - 1)}
+            <div className={style.nameBlock}>
+              <div className={style.name}>
+                {props.item.name != null ? props.item.name : props.item.enName}
+              </div>
+              <div className={style.role}>
+                {props.item.profession != 'актер' && props.item.profession}
+              </div>
             </div>
-          </div>
-          {/* </Link> */}
+          </Link>
         </>
       )}
     </div>

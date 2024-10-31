@@ -1,6 +1,8 @@
 .main {
+  user-select: none;
   margin-top: 14px;
-  .continue {
+  .continue,
+  .continue_G {
     cursor: pointer;
     transition: 0.2s ease-in-out;
     color: rgba(255, 255, 255, 0.9);
@@ -15,6 +17,30 @@
     }
     &:active {
       background-color: darken(rgba(102, 21, 137, 0.781), 7);
+    }
+  }
+  .or {
+    width: 100%;
+    text-align: center;
+    margin: 10px 0;
+    font-size: 20px;
+  }
+  .continue_G {
+    display: flex;
+    background-color: #ffffff;
+    color: black;
+    max-height: 44px;
+    // justify-content: center;
+    align-items: center;
+    img {
+      margin-left: -3px;
+      padding-right: 24px;
+    }
+    &:hover {
+      background-color: darken(#ffffff, 10);
+    }
+    &:active {
+      background-color: darken(#ffffff, 16);
     }
   }
 }

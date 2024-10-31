@@ -3,7 +3,7 @@
     margin: 0 80px;
     // align-items: center;
     &:not(:last-child) {
-      margin-bottom: 30px;
+      margin-bottom: 20px;
     }
     .input {
       position: relative;
@@ -13,8 +13,13 @@
         padding: 16px;
         border-radius: 15px;
         font-size: 16px;
+        transition: 0.18s;
         border: 2px solid gray;
         background-color: rgba(0, 0, 0, 0.148);
+        &:focus {
+          outline: none;
+          border: 2px solid #ffffff;
+        }
       }
       .svg {
         position: absolute;
@@ -23,9 +28,17 @@
         top: 14px;
         transition: 0.17s ease-in-out;
         border-radius: 20%;
+        opacity: 1;
+        visibility: visible;
+
         &:hover {
           color: black;
           background-color: rgb(77, 77, 77);
+        }
+        &Hiden {
+          transition: 0.17s ease-in-out;
+          opacity: 0;
+          visibility: hidden;
         }
       }
     }
@@ -34,6 +47,18 @@
       justify-content: start;
       margin-bottom: 8px;
       padding-left: 7px;
+    }
+    .forgot {
+      padding-left: 7px;
+      margin-top: 8px;
+
+      a {
+        color: white;
+        text-decoration: none;
+        &:hover {
+          text-decoration: underline;
+        }
+      }
     }
   }
 }

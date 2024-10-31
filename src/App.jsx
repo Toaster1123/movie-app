@@ -7,6 +7,8 @@ import { Register } from './components/register';
 
 import { FilmPage } from './pages/filmPage';
 import { Home } from './pages/main';
+import { Movies } from './pages/movies';
+import { PersonPage } from './pages/personPage';
 
 function App() {
   return (
@@ -16,6 +18,8 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/film/:id" element={<FilmPage />} />
+        <Route path="/movies/" element={<Movies />} />
+        <Route path="/person/:id" element={<PersonPage />} />
       </Routes>
       <Footer />
     </div>

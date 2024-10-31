@@ -1,23 +1,25 @@
 import { create } from 'zustand';
 import axios from 'axios';
 
-export const useMovieCartoons = create((set) => ({
+export const useMovieBestFilms = create((set) => ({
   data: [],
   loading: true,
   fetchItems: async () => {
     try {
       set({ loading: true });
       const fetchReq = await axios.get(
-        'https://api.kinopoisk.dev/v1.4/movie?notNullFields=backdrop.url&genres.name=мультфильм',
+        'https://api.kinopoisk.dev/v1.4/movie?notNullFields=backdrop.url&notNullFields=movieLength&genres.name=!документальный&genres.name=!мелодрама',
         {
           headers: {
-            'X-API-KEY': '4G89DHV-E8P4HZE-NVKHR5V-HH4C6D5',
+            'X-API-KEY': '6G49KG3-0164VVC-HEBEDNP-B4EMR80',
             'Content-Type': 'application/json',
           },
           params: {
-            ageRating: '0-6',
+            ageRating: '12-18',
             limit: 12,
-            // type: 'cartoon',
+            type: 'movie',
+            'rating.kp': '6 - 10',
+            'rating.imdb': '6 - 10',
           },
         },
       );

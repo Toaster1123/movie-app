@@ -2,7 +2,7 @@ import React from 'react';
 import ContentLoader from 'react-content-loader';
 import { Star } from 'lucide-react';
 
-import { useMovieItem } from '../../../../store/movieItem';
+import { useMovieItem } from '../../../../store/requests/movieItem';
 import style from './rating.module.scss';
 
 export const Rating = () => {

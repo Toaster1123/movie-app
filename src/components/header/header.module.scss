@@ -33,6 +33,10 @@ header {
       display: flex;
       align-items: center;
       .genres {
+        a {
+          text-decoration: none;
+          color: #ababab;
+        }
         margin-left: 90px;
         font-size: 17px;
         display: flex;

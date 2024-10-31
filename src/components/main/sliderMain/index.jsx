@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import ContentLoader from 'react-content-loader';
 
 import { FilmInfo } from '../../filmInfo/index.jsx';
-import { useMovieMainSwiper } from '../../../store/movieMainSlider.js';
+import { useMovieMainSwiper } from '../../../store/requests/movieMainSlider.js';
 
 import style from './slider.module.scss';
 import 'swiper/css';

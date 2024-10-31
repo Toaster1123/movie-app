@@ -1,45 +1,21 @@
 import ContentLoader from 'react-content-loader';
+
 import style from './bottomInfo.module.scss';
-import { useMovieItem } from '../../../store/movieItem';
-const months = [
-  'января',
-  'февраля',
-  'марта',
-  'апореля',
-  'мая',
-  'июня',
-  'июля',
-  'августа',
-  'сентября',
-  'октября',
-  'ноября',
-  'декабря',
-];
+import { useMovieItem } from '../../../store/requests/movieItem';
+
+import { formatDate } from '../../../lib/formatDate';
+
 export const FilmInfoBottom = () => {
   const filmData = useMovieItem((state) => state.movieItem);
   const loading = useMovieItem((state) => state.loading);
-  const formatDate = (date) => {
-    if (date != null) {
-      date = date
-        .substring(0, date.length - 14)
-        .split('-')
-        .join(' ');
-      return (date =
-        Number(date.substr(8)) +
-        ' ' +
-        months[Number(date.substr(4, 4)) - 1] +
-        ' ' +
-        date.substr(0, 4) +
-        ' г.');
-    }
-  };
+
   const writeDate = (param) => {
-    let data = [];
-    filmData.persons.map((item) => {
-      return item.enProfession == param && data.push(item.name != null && item.name + ', ');
+    const writeData = [];
+    filmData?.persons.map((item) => {
+      return item.enProfession === param && writeData.push(item.name != null ? item.name : '');
     });
-    data[data.length - 1] = data[data.length - 1].substring(0, data[data.length - 1].length - 2);
-    return data;
+    const lastItem = writeData[writeData.length - 1];
+    return lastItem ? lastItem.substring(0, lastItem.length - 2) : '';
   };
 
   let data = {};
@@ -74,6 +50,7 @@ export const FilmInfoBottom = () => {
       },
     };
   }
+
   return (
     <div className={style.main}>
       {loading ? (
@@ -91,7 +68,7 @@ export const FilmInfoBottom = () => {
             <div key={id} className={style.infoBlock}>
               <div className={style.title}>{item[0]}</div>
               {Object.entries(item[1]).map((item, id) => {
-                if (item[1] == undefined) {
+                if (item[1] == undefined || item[1] == '') {
                   return;
                 }
                 return (

@@ -1,26 +1,28 @@
 import { create } from 'zustand';
 import axios from 'axios';
 
-export const useSimilarFilms = create((set) => ({
-  similarMovies: [],
+export const useMovieCartoons = create((set) => ({
+  data: [],
   loading: true,
-  fetchItems: async (id) => {
+  fetchItems: async () => {
     try {
       set({ loading: true });
-      const data = await axios.get(
-        `https://api.kinopoisk.dev/v1.4/movie?similarMovies.id=${id}&notNullFields=name&notNullFields=backdrop.url`,
+      const fetchReq = await axios.get(
+        'https://api.kinopoisk.dev/v1.4/movie?notNullFields=backdrop.url&genres.name=мультфильм',
         {
           headers: {
-            'X-API-KEY': '4G89DHV-E8P4HZE-NVKHR5V-HH4C6D5',
+            'X-API-KEY': '6G49KG3-0164VVC-HEBEDNP-B4EMR80',
             'Content-Type': 'application/json',
           },
           params: {
+            ageRating: '0-6',
             limit: 12,
+            // type: 'cartoon',
           },
         },
       );
       set({
-        similarMovies: data.data.docs,
+        data: fetchReq.data.docs,
       });
     } catch (error) {
       console.log(error);

@@ -4,9 +4,9 @@ import { SliderMain } from '../../components/main/sliderMain/index.jsx';
 import { AdvMain } from '../../components/main/advMain/index.jsx';
 import { RecomendsMovie } from '../../components/recomends';
 
-import { useMovieBestFilms } from '../../store/movieRecomendBest.js';
-import { useMovieCartoons } from '../../store/movieRecCartoons.js';
-import { useMovieNews } from '../../store/movieRecNews.js';
+import { useMovieBestFilms } from '../../store/requests/movieRecomendBest.js';
+import { useMovieCartoons } from '../../store/requests/movieRecCartoons.js';
+import { useMovieNews } from '../../store/requests/movieRecNews.js';
 
 export const Home = () => {
   const fetchReqBest = useMovieBestFilms((state) => state.fetchItems);

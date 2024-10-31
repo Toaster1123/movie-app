@@ -1,7 +1,7 @@
 import React from 'react';
 import ContentLoader from 'react-content-loader';
 
-import { useMovieItem } from '../../../../store/movieItem';
+import { useMovieItem } from '../../../../store/requests/movieItem';
 import style from './description.module.scss';
 
 export const FilmDescription = () => {

@@ -1,0 +1,40 @@
+.main {
+  width: 100%;
+  color: #e3e3e3;
+  .personProfile {
+    margin: 100px 0;
+    margin-left: 10vw;
+    display: flex;
+    font-size: 19px;
+    & div {
+      margin-bottom: 8px;
+    }
+    .errorInfo {
+      font-size: 22px;
+    }
+    .image {
+      max-height: 280px;
+      max-width: 220px;
+      margin-right: 140px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 20px;
+      overflow: hidden;
+      background-color: rgba(255, 255, 255, 0.075);
+      box-shadow: 0 0 120px 120px rgba(255, 255, 255, 0.078);
+      img {
+        pointer-events: none;
+        width: 220px;
+
+        height: 330px;
+      }
+    }
+    .name {
+      padding-top: 25px;
+      font-size: 40px;
+      font-weight: bold;
+      margin-bottom: 40px;
+    }
+  }
+}

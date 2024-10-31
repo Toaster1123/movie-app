@@ -1,7 +1,7 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
 
-import { useSimilarFilms } from '../../../store/similarFilms';
+import { useSimilarFilms } from '../../../store/requests/similarFilms';
 import { RecomendsMovie } from '../../recomends';
 
 import style from './similar.module.scss';

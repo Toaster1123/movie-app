@@ -3,7 +3,7 @@ import { Bookmark } from 'lucide-react';
 import { useParams } from 'react-router-dom';
 import ContentLoader from 'react-content-loader';
 
-import { useMovieItem } from '../../../store/movieItem';
+import { useMovieItem } from '../../../store/requests/movieItem';
 import { FilmInfo } from '../../filmInfo';
 
 import style from './mainFilmInfo.module.scss';

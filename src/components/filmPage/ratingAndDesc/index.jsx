@@ -3,7 +3,7 @@ import ContentLoader from 'react-content-loader';
 
 import { FilmDescription } from './filmDescription';
 import { Rating } from './ratingFilm';
-import { useMovieItem } from '../../../store/movieItem';
+import { useMovieItem } from '../../../store/requests/movieItem';
 
 import style from './rd.module.scss';
 export const RatingDesc = () => {

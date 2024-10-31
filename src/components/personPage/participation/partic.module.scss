@@ -1,0 +1,29 @@
+.main {
+  margin: 0 10vw;
+  margin-bottom: 40px;
+  .title {
+    font-size: 34px;
+    margin-bottom: 6px;
+    margin-left: 8px;
+  }
+  .info {
+    color: #dedede;
+    display: flex;
+    flex-wrap: wrap;
+    a {
+      color: #dedede;
+      text-decoration: none;
+    }
+
+    .text {
+      font-size: 17px;
+      margin-right: 6px;
+
+      &:hover {
+        cursor: pointer;
+        user-select: none;
+        text-decoration: underline;
+      }
+    }
+  }
+}
