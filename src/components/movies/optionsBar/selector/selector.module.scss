@@ -1,0 +1,85 @@
+.main {
+  &:not(:last-of-type) {
+    margin-right: 10px;
+  }
+  .title {
+    background: #1a1a1a;
+    border-radius: 8px;
+    color: #e4e4e4;
+    font-weight: bold;
+    font-size: 17px;
+    display: flex;
+    width: fit-content;
+    padding: 14px 22px;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    .text {
+      user-select: none;
+    }
+    &:hover {
+      background: #1e1e1e;
+    }
+    .arrow {
+      height: 16px;
+      transition: all 0.2s ease-in-out;
+      margin-left: 16px;
+    }
+    .activeArrow {
+      transform: rotate(180deg);
+    }
+  }
+  .titleButton {
+    background: #e2e2e2;
+    color: black;
+    &:hover {
+      background: #e2e2e2;
+    }
+  }
+  .options {
+    border-radius: 12px;
+    position: absolute;
+    max-height: 400px;
+    margin-top: 10px;
+    background-color: #111;
+    overflow: hidden;
+    overflow-y: auto;
+    transition: all 0.18s ease-in-out;
+    visibility: hidden;
+    opacity: 0;
+
+    .option {
+      font-size: 17px;
+      color: #cccccc;
+      font-weight: bold;
+      padding: 11px 16px;
+      user-select: none;
+      cursor: pointer;
+      align-items: center;
+      justify-content: space-between;
+      display: flex;
+      &:hover {
+        background-color: #1a1a1a;
+      }
+      .selected {
+        margin-left: 8px;
+        transition: 0.1s;
+        opacity: 0;
+      }
+      .selectedTrue {
+        opacity: 1;
+      }
+    }
+  }
+  .activeMenu {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #474747;
+    border-radius: 4px;
+  }
+}

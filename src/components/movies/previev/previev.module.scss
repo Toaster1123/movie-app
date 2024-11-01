@@ -2,6 +2,7 @@
   margin-top: 56px;
   width: 50%;
   font-weight: bold;
+  margin-bottom: 40px;
   .title {
     font-size: 45px;
     margin-bottom: 9px;
@@ -10,5 +11,11 @@
     color: #b7b7b7;
     font-size: 19px;
     line-height: 29px;
+  }
+  .showMore {
+    cursor: pointer;
+    color: #8776f9;
+    margin-bottom: 30px;
+    display: inline;
   }
 }
