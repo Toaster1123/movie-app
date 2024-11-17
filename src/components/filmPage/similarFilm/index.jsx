@@ -15,7 +15,7 @@ export const SimilarFilm = () => {
     try {
       fetchSimilar(id);
     } catch (error) {
-      console.log(error);
+      console.error(error);
     }
   }, [id]);
 

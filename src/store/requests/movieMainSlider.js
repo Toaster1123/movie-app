@@ -26,7 +26,7 @@ export const useMovieMainSwiper = create((set) => ({
         dataMainSwiper: data.data.docs,
       });
     } catch (error) {
-      console.log(error);
+      console.error(error);
     } finally {
       set({ loading: false });
     }

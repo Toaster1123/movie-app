@@ -13,7 +13,6 @@ export const PersonPage = () => {
   const personData = usePersonItem((state) => state.person);
   const fetchItems = usePersonItem((state) => state.fetchItems);
   const loading = usePersonItem((state) => state.loading);
-  console.log(personData);
   const { id } = useParams();
 
   React.useEffect(() => {

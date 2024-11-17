@@ -8,5 +8,4 @@ const chooseColorRating = (val) => {
     return 'ratingColorGreen';
   }
 };
-// console.log(chooseColorRating(7.7));
 export default chooseColorRating;

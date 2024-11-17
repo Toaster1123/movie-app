@@ -3,7 +3,6 @@ import { usePersonItem } from '../../../store/requests/personId';
 
 export const Facts = () => {
   const personData = usePersonItem((state) => state.person);
-  console.log(personData.facts);
   return (
     <div className={style.main}>
       <div className={style.title}>Факты</div>

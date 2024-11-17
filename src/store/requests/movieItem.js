@@ -17,7 +17,7 @@ export const useMovieItem = create((set) => ({
         movieItem: data.data,
       });
     } catch (error) {
-      console.log(error);
+      console.error(error);
     } finally {
       set({ loading: false });
     }

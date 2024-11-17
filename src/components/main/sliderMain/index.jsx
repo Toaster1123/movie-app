@@ -15,12 +15,13 @@ import 'swiper/css/navigation';
 export const SliderMain = () => {
   const scrollItems = useMovieMainSwiper((state) => state.dataMainSwiper);
   const fetchData = useMovieMainSwiper((state) => state.fetchItems);
-  const loading = useMovieMainSwiper((state) => state.loading);
+  const swiperLoading = useMovieMainSwiper((state) => state.loading);
+  const loading = scrollItems.length > 0 ? swiperLoading : true;
   React.useEffect(() => {
     try {
       fetchData();
     } catch (error) {
-      console.log(error);
+      console.error(error);
     }
   }, []);
   return (

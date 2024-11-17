@@ -18,7 +18,7 @@ export const MainFilmInfo = () => {
     try {
       fetchData(id);
     } catch (error) {
-      console.log(error);
+      console.error(error);
     }
   }, [id]);
 

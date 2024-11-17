@@ -1,26 +1,23 @@
 import { create } from 'zustand';
 import axios from 'axios';
 
-export const useSimilarFilms = create((set) => ({
-  similarMovies: [],
+export const useMovieGenres = create((set) => ({
+  movieGenres: [],
   loading: true,
-  fetchItems: async (id) => {
+  fetchItems: async () => {
     try {
       set({ loading: true });
       const data = await axios.get(
-        `https://api.kinopoisk.dev/v1.4/movie?similarMovies.id=${id}&notNullFields=name&notNullFields=backdrop.url`,
+        `https://api.kinopoisk.dev/v1/movie/possible-values-by-field?field=genres.name`,
         {
           headers: {
             'X-API-KEY': '6G49KG3-0164VVC-HEBEDNP-B4EMR80',
             'Content-Type': 'application/json',
           },
-          params: {
-            limit: 12,
-          },
         },
       );
       set({
-        similarMovies: data.data.docs,
+        movieGenres: data,
       });
     } catch (error) {
       console.error(error);

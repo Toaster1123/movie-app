@@ -9,7 +9,7 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 
 export const RecomendsMovie = (props) => {
-  const loading = props.loading;
+  const loading = props.filmsData.length > 0 ? props.loading : true;
   return (
     <div className={style.main}>
       <section className={style.NameOfRec}>

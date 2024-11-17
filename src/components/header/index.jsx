@@ -17,8 +17,6 @@ export const Header = () => {
   const setOpened = isOpened((state) => state.setOpened);
   const [currentGenres, setCurrentGenres] = React.useState('/');
   const location = useLocation();
-  console.log(currentGenres);
-  console.log(location.pathname);
 
   return (
     <header>

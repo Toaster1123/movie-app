@@ -25,7 +25,7 @@ export const useMovieCartoons = create((set) => ({
         data: fetchReq.data.docs,
       });
     } catch (error) {
-      console.log(error);
+      console.error(error);
     } finally {
       set({ loading: false });
     }
