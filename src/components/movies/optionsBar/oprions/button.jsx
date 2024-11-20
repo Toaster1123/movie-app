@@ -3,14 +3,21 @@ import style from './selector.module.scss';
 import { openSelectorBar } from '../../../../store/openSelectorBar';
 import { urlParams } from '../../../../store/urlParams';
 
-export const Button = ({ title }) => {
+export const Button = () => {
   const [onClick, setOnClick] = useState(false);
-  const setHightRating = urlParams((state) => state.setHightRating);
+  const { setHightRating, hightRating } = urlParams((state) => state);
   const { paramCount, incParamCount, decParamCount } = openSelectorBar((state) => state);
+  useEffect(() => {
+    if (hightRating != undefined) {
+      setOnClick(true);
+      incParamCount();
+    }
+  }, [hightRating]);
+
   useEffect(() => {
     if (paramCount == 0) {
       setOnClick(false);
-      setHightRating('');
+      setHightRating(undefined);
     }
   }, [paramCount]);
   useEffect(() => {
@@ -27,7 +34,7 @@ export const Button = ({ title }) => {
           !onClick ? incParamCount() : decParamCount();
         }}
         className={`${style.title} ${onClick && paramCount > 0 ? style.title_active : ''}`}>
-        {title}
+        Высокий рейтинг
       </div>
     </div>
   );

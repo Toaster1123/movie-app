@@ -19,7 +19,7 @@ const years = [
 export const YearSelector = () => {
   const id = 3;
   const { incParamCount, paramCount, setOpened, opened } = openSelectorBar((state) => state);
-  const { setYear } = urlParams((state) => state);
+  const { setYear, year } = urlParams((state) => state);
 
   const [isSelect, setIsSelect] = useState(null);
   const handleSelectOption = (id) => {
@@ -38,8 +38,15 @@ export const YearSelector = () => {
     }
   };
   useEffect(() => {
+    if (year != undefined) {
+      setIsSelect(years.findIndex((item) => item.reqName === year));
+      incParamCount();
+    }
+  }, [year]);
+
+  useEffect(() => {
     if (paramCount == 0) {
-      setYear('');
+      setYear(undefined);
       setOpened(null);
       setIsSelect(null);
     }

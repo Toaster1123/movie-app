@@ -8,7 +8,7 @@ const countries = ['Россия', 'США'];
 export const CountrySelector = () => {
   const id = 2;
   const { incParamCount, paramCount, setOpened, opened } = openSelectorBar((state) => state);
-  const { setCountry } = urlParams((state) => state);
+  const { setCountry, country } = urlParams((state) => state);
 
   const [isSelect, setIsSelect] = useState(null);
   const handleSelectOption = (id) => {
@@ -27,8 +27,15 @@ export const CountrySelector = () => {
     }
   };
   useEffect(() => {
+    if (country != undefined) {
+      setIsSelect(countries.findIndex((item) => item === country));
+      incParamCount();
+    }
+  }, [country]);
+
+  useEffect(() => {
     if (paramCount == 0) {
-      setCountry('');
+      setCountry(undefined);
       setOpened(null);
       setIsSelect(null);
     }

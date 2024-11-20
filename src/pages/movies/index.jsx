@@ -4,49 +4,23 @@ import { OptionsBar } from '../../components/movies/optionsBar';
 import style from './movies.module.scss';
 import { RecomendsMovie } from '../../components/recomends';
 
-import { useMovieWithParams } from '../../store/requests/movie-with-params.js';
 import { useMovieBestFilms } from '../../store/requests/movieRecomendBest.js';
 import { useMovieNews } from '../../store/requests/movieRecNews.js';
-
-import qs from 'qs';
-import { useNavigate, useParams } from 'react-router-dom';
-import { urlParams } from '../../store/urlParams.js';
+import { openSelectorBar } from '../../store/openSelectorBar.js';
+import { FilmArray } from '../../components/array-film-with-params/index.jsx';
 
 export const Movies = () => {
-  const isMounted = React.useRef(false);
-  const params = useParams();
-  console.log('params', params);
+  const { paramCount } = openSelectorBar((state) => state);
   const fetchReqBest = useMovieBestFilms((state) => state.fetchItems);
   const bestFilms = useMovieBestFilms((state) => state.data);
   const fetchReqNews = useMovieNews((state) => state.fetchItems);
   const NewFilms = useMovieNews((state) => state.data);
-  const fetchMoviesByParams = useMovieWithParams((state) => state.fetchItems);
-  const moviesByParams = useMovieWithParams((state) => state.movie);
-  const navigate = useNavigate();
-  const { genre, country, year, hightRating, setUrlFiltres } = urlParams((state) => state);
-  console.log(hightRating);
-  const queryParams = {};
-  if (genre != '') {
-    queryParams.genre = genre;
-  }
-  if (country != '') {
-    queryParams.country = country;
-  }
-  if (year != '') {
-    queryParams.year = year;
-  }
-
-  if (hightRating != '') {
-    queryParams['rating.imdb'] = hightRating;
-  }
-  React.useEffect(() => {
-    const queryString = qs.parse(window.location.search.substring(1));
-    console.log(queryString);
-  }, [genre, country, year, hightRating]);
 
   React.useEffect(() => {
-    // fetchReqNews();
-    // fetchReqBest();
+    if (paramCount == 0) {
+      fetchReqNews();
+      fetchReqBest();
+    }
   }, []);
   const renderSliderParams = [
     {
@@ -63,27 +37,19 @@ export const Movies = () => {
     },
   ];
 
-  React.useEffect(() => {
-    if (isMounted.current) {
-      const queryString = qs.stringify(queryParams);
-      navigate(`?${queryString}`);
-      if (Object.keys(queryString).length > 0) {
-        try {
-          // fetchMoviesByParams(queryString);
-        } catch (error) {
-          console.error('Error in fetchItems:', error);
-        }
-      }
-    }
-    isMounted.current = true;
-  }, [genre, country, year, hightRating]);
   return (
     <main>
-      <Previev />
-      <OptionsBar />
-      {renderSliderParams.map((item) => {
-        return <RecomendsMovie key={item.title} {...item} loading={item.loading} />;
-      })}
+      <div className={style.top_elements}>
+        <Previev />
+        <OptionsBar />
+      </div>
+      {paramCount == 0 ? (
+        renderSliderParams.map((item) => {
+          return <RecomendsMovie key={item.title} {...item} loading={item.loading} />;
+        })
+      ) : (
+        <FilmArray />
+      )}
     </main>
   );
 };

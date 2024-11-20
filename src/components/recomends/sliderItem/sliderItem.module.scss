@@ -1,7 +1,7 @@
 .main {
   transition: all 0.28s ease-in-out;
   cursor: pointer;
-  // margin-bottom: -68px;
+  // margin-bottom: 38px;
   max-width: 325px;
   color: white;
   // margin-left: 4.7vw;
@@ -63,14 +63,7 @@
       }
     }
   }
-  &:hover {
-    transform: scale(1.02);
-    position: absolute;
-    .image {
-      // border-radius: 16px 16px 0 0;
-    }
-    .textBlock {
-      // visibility: visible;
-    }
-  }
+}
+.mainNotSlider {
+  margin-bottom: 30px;
 }

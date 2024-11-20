@@ -1,12 +1,11 @@
 import React from 'react';
 import ContentLoader from 'react-content-loader';
 import { Link } from 'react-router-dom';
-
-import style from './sliderItem.module.scss';
+import style from './film-card.module.scss';
 
 // import { FilmInfo } from '../../filmInfo';
 
-export const SliderItem = ({ item, height, loading }) => {
+export const FilmWithParamItem = ({ item, loading }) => {
   return (
     <div className={style.main}>
       {loading ? (
@@ -20,17 +19,11 @@ export const SliderItem = ({ item, height, loading }) => {
         </ContentLoader>
       ) : (
         <Link to={`/film/${item.id}`}>
-          <div className={style[height]}>
-            <img
-              className={style.image}
-              src={
-                height == 'imageBorderLow'
-                  ? item.backdrop?.url || item.backdrop?.preveiwUrl
-                  : item.poster?.url || item.poster?.preveiwUrl
-              }
-              alt="заставка фильма"
-            />
-          </div>
+          <img
+            className={style.image}
+            src={item.backdrop?.url || item.backdrop?.preveiwUrl}
+            alt="заставка фильма"
+          />
           {/* <div className={style.textBlock}>
             <div className={style.filmName}>{item.name}</div>
             <FilmInfo item={item} />

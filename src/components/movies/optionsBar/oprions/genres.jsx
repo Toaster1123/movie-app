@@ -138,7 +138,7 @@ const genres = [
 export const GenreSelector = () => {
   const id = 1;
   const { incParamCount, paramCount, setOpened, opened } = openSelectorBar((state) => state);
-  const { setGenre } = urlParams((state) => state);
+  const { setGenre, genre } = urlParams((state) => state);
   const [isSelect, setIsSelect] = useState(null);
   const handleSelectOption = (id) => {
     setIsSelect(id);
@@ -156,8 +156,15 @@ export const GenreSelector = () => {
     }
   };
   useEffect(() => {
+    if (genre != undefined) {
+      setIsSelect(genres.findIndex((item) => item.name === genre));
+      incParamCount();
+    }
+  }, [genre]);
+
+  useEffect(() => {
     if (paramCount == 0) {
-      setGenre('');
+      setGenre(undefined);
       setOpened(null);
       setIsSelect(null);
     }

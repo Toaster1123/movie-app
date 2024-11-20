@@ -6,16 +6,20 @@ export const useMovieWithParams = create((set) => ({
   loading: true,
   fetchItems: async (params) => {
     try {
+      console.log('first');
       set({ loading: true });
-      const data = await axios.get(`https://api.kinopoisk.dev/v1.4/movie?${params}`, {
-        headers: {
-          'X-API-KEY': '4G89DHV-E8P4HZE-NVKHR5V-HH4C6D5',
-          'Content-Type': 'application/json',
+      const data = await axios.get(
+        `https://api.kinopoisk.dev/v1.4/movie?notNullFields=name&${params}`,
+        {
+          headers: {
+            'X-API-KEY': 'QXH7WES-08KMJYM-NW88RJH-KGZSCMQ',
+            'Content-Type': 'application/json',
+          },
+          params: {
+            limit: 30,
+          },
         },
-        params: {
-          limit: 30,
-        },
-      });
+      );
       set({
         movie: data.data.docs,
         loading: false,

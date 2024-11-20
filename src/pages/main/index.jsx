@@ -21,7 +21,7 @@ export const Home = () => {
       fetchReqNews();
       fetchReqCartoon();
     } catch (error) {
-      console.log(error);
+      console.error(error);
     }
   }, []);
 

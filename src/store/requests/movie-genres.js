@@ -11,7 +11,7 @@ export const useMovieGenres = create((set) => ({
         `https://api.kinopoisk.dev/v1/movie/possible-values-by-field?field=genres.name`,
         {
           headers: {
-            'X-API-KEY': '6G49KG3-0164VVC-HEBEDNP-B4EMR80',
+            'X-API-KEY': 'QXH7WES-08KMJYM-NW88RJH-KGZSCMQ',
             'Content-Type': 'application/json',
           },
         },
