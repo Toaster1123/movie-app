@@ -57,4 +57,3 @@ export const RecomendsMovie = (props) => {
     </div>
   );
 };
-// props.filmsData != undefined

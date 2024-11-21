@@ -11,9 +11,10 @@ $headerTextColor: #ffffff;
 }
 
 header {
-  // position: fixed;
+  position: fixed;
   top: 0;
   z-index: 100;
+  transition: 0.2s ease-in-out;
   width: 100%;
   background-color: #000000;
   color: #ababab;
@@ -84,4 +85,7 @@ header {
       }
     }
   }
+}
+.header_active {
+  top: -66px;
 }

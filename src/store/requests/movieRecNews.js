@@ -8,10 +8,10 @@ export const useMovieNews = create((set) => ({
     try {
       set({ loading: true });
       const fetchReq = await axios.get(
-        'https://api.kinopoisk.dev/v1.4/movie?notNullFields=backdrop.url&notNullFields=movieLength',
+        'https://api.kinopoisk.dev/v1.4/movie?notNullFields=backdrop.url&notNullFields=poster.url&genres.name=!концерт&notNullFields=movieLength',
         {
           headers: {
-            'X-API-KEY': 'QXH7WES-08KMJYM-NW88RJH-KGZSCMQ',
+            'X-API-KEY': '4G89DHV-E8P4HZE-NVKHR5V-HH4C6D5',
             'Content-Type': 'application/json',
           },
           params: {

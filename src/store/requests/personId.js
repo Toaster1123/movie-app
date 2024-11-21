@@ -9,7 +9,7 @@ export const usePersonItem = create((set) => ({
       set({ loading: true });
       const data = await axios.get(`https://api.kinopoisk.dev/v1.4/person/${id}`, {
         headers: {
-          'X-API-KEY': 'QXH7WES-08KMJYM-NW88RJH-KGZSCMQ',
+          'X-API-KEY': '4G89DHV-E8P4HZE-NVKHR5V-HH4C6D5',
           'Content-Type': 'application/json',
         },
       });

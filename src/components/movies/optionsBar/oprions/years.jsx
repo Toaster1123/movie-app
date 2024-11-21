@@ -16,7 +16,7 @@ const years = [
   { name: '1980-1989', reqName: '1980-1989' },
   { name: 'до 1980', reqName: '1970-1980' },
 ];
-export const YearSelector = () => {
+export const YearSelector = ({ loading }) => {
   const id = 3;
   const { incParamCount, paramCount, setOpened, opened } = openSelectorBar((state) => state);
   const { setYear, year } = urlParams((state) => state);
@@ -38,7 +38,7 @@ export const YearSelector = () => {
     }
   };
   useEffect(() => {
-    if (year != undefined) {
+    if (year != undefined && isSelect == null) {
       setIsSelect(years.findIndex((item) => item.reqName === year));
       incParamCount();
     }
@@ -53,7 +53,8 @@ export const YearSelector = () => {
   }, [paramCount]);
   return (
     <div className={style.main}>
-      <div
+      <button
+        disabled={loading}
         onClick={() => {
           changeSelect(id);
         }}
@@ -64,7 +65,7 @@ export const YearSelector = () => {
         <div className={`${style.arrow} ${opened == id ? style.activeArrow : ''}`}>
           <ChevronDown size={21} strokeWidth={1.25} />
         </div>
-      </div>
+      </button>
       <div className={`${style.options} ${opened == id ? style.activeMenu : ''}`}>
         {years.map((item, id) => (
           <div

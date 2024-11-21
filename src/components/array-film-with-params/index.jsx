@@ -5,11 +5,10 @@ import { FilmWithParamItem } from './film-with-param-item';
 
 export const FilmArray = () => {
   const { movie, loading } = useMovieWithParams((state) => state);
-  console.log(movie);
   return (
     <div className={style.main}>
-      {movie.map((item) => (
-        <FilmWithParamItem key={item.id} item={item} loading={loading} />
+      {(loading ? [...Array(10)] : movie).map((item, id) => (
+        <FilmWithParamItem key={id} item={item} loading={loading} />
       ))}
     </div>
   );

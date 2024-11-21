@@ -14,15 +14,16 @@ export const PersonPage = () => {
   const fetchItems = usePersonItem((state) => state.fetchItems);
   const loading = usePersonItem((state) => state.loading);
   const { id } = useParams();
-
+  console.log(personData);
   React.useEffect(() => {
     try {
       fetchItems(id);
     } catch (error) {}
   }, []);
+
   return (
     <div className={style.main}>
-      {loading ? (
+      {!personData || loading ? (
         ''
       ) : (
         <>
@@ -46,7 +47,7 @@ export const PersonPage = () => {
                     </div>
                   )}
                   {personData.age && <div className={style.years}>{personData.age} лет</div>}
-                  {personData.birthPlace.length != 0 && (
+                  {personData.birthPlace != null && (
                     <div className={style.living}>
                       {!loading
                         ? personData.birthPlace[personData.birthPlace.length - 2].value +
@@ -59,7 +60,7 @@ export const PersonPage = () => {
               </>
             )}
           </div>
-          {personData.facts.length != 0 && <Facts />}
+          {personData.facts != null && <Facts />}
           {personData.movies && <Participation />}
         </>
       )}

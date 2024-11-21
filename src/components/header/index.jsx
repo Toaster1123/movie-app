@@ -10,16 +10,38 @@ import style from './header.module.scss';
 const genres = [
   ['/', 'Главная'],
   ['/movies', 'Фильмы'],
-  ['/p', 'Сериалы'],
-  ['/g', 'Мультфильмы'],
+  ['/series', 'Сериалы'],
+  ['/cartoons', 'Мультфильмы'],
 ];
 export const Header = () => {
+  const [isScrolledDown, setIsScrolledDown] = React.useState(false);
+  const [prevPos, setPrevPos] = React.useState(0);
   const setOpened = isOpened((state) => state.setOpened);
-  const [currentGenres, setCurrentGenres] = React.useState('/');
   const location = useLocation();
-
+  const scroll = () => {
+    const scrollPos = window.scrollY;
+    console.log('scrollPos', scrollPos);
+    console.log('prevPOs', prevPos);
+    if (scrollPos - prevPos > 0) {
+      setIsScrolledDown(true);
+    } else {
+      setIsScrolledDown(false);
+    }
+    // if (scrollPos > 100 && !isScrolledDown) {
+    //   setIsScrolledDown(true);
+    // } else if (scrollPos <= 200 && isScrolledDown) {
+    //   setIsScrolledDown(false);
+    // }
+    setPrevPos(scrollPos);
+  };
+  React.useEffect(() => {
+    window.addEventListener('scroll', scroll);
+    return () => {
+      window.removeEventListener('scroll', scroll);
+    };
+  }, [isScrolledDown]);
   return (
-    <header>
+    <header className={`${isScrolledDown ? style.header_active : ''}`}>
       <div className={style.header}>
         <div className={style.headerLeft}>
           <Link to="/">
@@ -29,12 +51,7 @@ export const Header = () => {
             {genres.map((item, id) => {
               return (
                 <Link key={id} to={item[0]}>
-                  <div
-                    onClick={() => {
-                      setCurrentGenres(item[0]);
-                    }}
-                    className={location.pathname == item[0] ? style.active : ''}
-                    key={id}>
+                  <div className={location.pathname == item[0] ? style.active : ''} key={id}>
                     {item[1]}
                   </div>
                 </Link>

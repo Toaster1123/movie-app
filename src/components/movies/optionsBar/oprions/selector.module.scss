@@ -10,10 +10,19 @@
     font-weight: bold;
     font-size: 17px;
     display: flex;
+    border: 0;
     width: fit-content;
     padding: 14px 22px;
     cursor: pointer;
     transition: all 0.2s ease-in-out;
+    &:disabled {
+      background: darken(#1a1a1a, 3);
+      color: darken(#e4e4e4, 50);
+      &:hover {
+        background: darken(#1a1a1a, 3);
+        color: darken(#e4e4e4, 50);
+      }
+    }
     .text {
       user-select: none;
     }
@@ -46,6 +55,7 @@
   .options {
     border-radius: 12px;
     position: absolute;
+    z-index: 2;
     max-height: 400px;
     margin-top: 10px;
     background-color: #111;

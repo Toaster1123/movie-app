@@ -1,18 +1,25 @@
+@mixin height-width {
+  height: 183px;
+  width: 325px;
+  border-radius: 10px;
+}
 .main {
-  transition: all 0.28s ease-in-out;
-  cursor: pointer;
-  // margin-bottom: 38px;
-  max-width: 325px;
+  transition: 0.28s ease-in-out;
   color: white;
-  // margin-left: 4.7vw;
-
+  // @include height-width;
+  a {
+    color: white;
+    cursor: default;
+    text-decoration: none;
+  }
   .imageBorderLow {
-    height: 183px;
-    width: 325px;
     .image {
-      height: 100%;
-      width: 100%;
+      @include height-width;
+      transition: 0.2s ease-in-out;
       border-radius: 16px;
+      &:hover {
+        transform: scale(1.009);
+      }
     }
   }
 
@@ -24,10 +31,14 @@
       pointer-events: none;
       width: 100%;
       border-radius: 16px;
+      &:hover {
+        transform: scale(1.009);
+      }
     }
   }
   .textBlock {
-    // display: none;
+    opacity: 0;
+    transition: 0.3s ease-in-out;
     visibility: hidden;
     border-radius: 0 0 16px 16px;
     background-color: #1b1b1b;
@@ -35,7 +46,7 @@
     font-weight: 500;
     font-size: 14px;
     padding: 10px 16px;
-    margin-top: -10px;
+    // margin-top: -10px;
     .filmName {
       font-size: 14px;
       margin-top: 7px;
@@ -61,6 +72,18 @@
           border: 1px solid white;
         }
       }
+    }
+  }
+  &_hover {
+    transform: scale(1.18);
+
+    .image {
+      border-radius: 10px 10px 0 0;
+    }
+    .textBlock {
+      visibility: visible;
+      cursor: pointer;
+      opacity: 1;
     }
   }
 }

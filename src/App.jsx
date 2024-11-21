@@ -9,6 +9,9 @@ import { FilmPage } from './pages/filmPage';
 import { Home } from './pages/main';
 import { Movies } from './pages/movies';
 import { PersonPage } from './pages/personPage';
+import { ErrorPage } from './pages/error-page';
+import { SeriesPage } from './pages/series';
+import { CartoonPage } from './pages/cartoons';
 
 function App() {
   return (
@@ -19,7 +22,10 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/film/:id" element={<FilmPage />} />
         <Route path="/movies/" element={<Movies />} />
+        <Route path="/series/" element={<SeriesPage />} />
+        <Route path="/cartoons/" element={<CartoonPage />} />
         <Route path="/person/:id" element={<PersonPage />} />
+        <Route path="*" element={<ErrorPage />} />
       </Routes>
       <Footer />
     </div>

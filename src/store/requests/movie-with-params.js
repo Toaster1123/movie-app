@@ -3,16 +3,15 @@ import axios from 'axios';
 
 export const useMovieWithParams = create((set) => ({
   movie: [],
-  loading: true,
+  loading: false,
   fetchItems: async (params) => {
     try {
-      console.log('first');
       set({ loading: true });
       const data = await axios.get(
-        `https://api.kinopoisk.dev/v1.4/movie?notNullFields=name&${params}`,
+        `https://api.kinopoisk.dev/v1.4/movie?notNullFields=backdrop.url&notNullFields=name&notNullFields=rating.imdb&${params}`,
         {
           headers: {
-            'X-API-KEY': 'QXH7WES-08KMJYM-NW88RJH-KGZSCMQ',
+            'X-API-KEY': '4G89DHV-E8P4HZE-NVKHR5V-HH4C6D5',
             'Content-Type': 'application/json',
           },
           params: {
@@ -22,6 +21,7 @@ export const useMovieWithParams = create((set) => ({
       );
       set({
         movie: data.data.docs,
+        // loading: data.data.docs.length > 0 ? false : true,
         loading: false,
       });
     } catch (error) {

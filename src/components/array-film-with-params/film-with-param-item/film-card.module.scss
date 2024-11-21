@@ -1,0 +1,74 @@
+@mixin height-width {
+  height: 183px;
+  width: 325px;
+  border-radius: 10px;
+}
+.main {
+  transition: 0.3s ease-in-out;
+  @include height-width;
+  margin-bottom: 40px;
+  a {
+    color: white;
+    cursor: default;
+    text-decoration: none;
+  }
+  .image {
+    transition: 0.2s ease-in-out;
+    @include height-width;
+    cursor: pointer;
+
+    &:hover {
+      transform: scale(1.009);
+    }
+  }
+  .textBlock {
+    opacity: 0;
+    transition: 0.3s ease-in-out;
+    visibility: hidden;
+    border-radius: 0 0 16px 16px;
+    background-color: #1b1b1b;
+    font-family: sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    padding: 10px 16px;
+    // margin-top: -10px;
+    .filmName {
+      font-size: 14px;
+      margin-top: 7px;
+      margin-bottom: 6px;
+      color: white;
+    }
+
+    .buttons {
+      .btnMore {
+        margin-top: 8px;
+        padding: 7px 10px;
+        display: inline-block;
+        border: none;
+        font-size: 14px;
+        border: 1.5px solid rgba(0, 0, 0, 0);
+        font-weight: 500;
+        background: linear-gradient(to top right, #2b0071, #4e00cc, #6f15ff);
+        border-radius: 8px;
+        cursor: pointer;
+        transition: 0.2s ease-in-out;
+        &:hover {
+          background: linear-gradient(to right, #2b0071, #5301d8, #6f15ff);
+          border: 1px solid white;
+        }
+      }
+    }
+  }
+  &_hover {
+    transform: scale(1.18);
+
+    .image {
+      border-radius: 10px 10px 0 0;
+    }
+    .textBlock {
+      visibility: visible;
+      cursor: pointer;
+      opacity: 1;
+    }
+  }
+}

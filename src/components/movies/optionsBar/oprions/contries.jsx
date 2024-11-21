@@ -5,7 +5,7 @@ import { useEffect, useState } from 'react';
 import { urlParams } from '../../../../store/urlParams';
 const countries = ['Россия', 'США'];
 
-export const CountrySelector = () => {
+export const CountrySelector = ({ loading }) => {
   const id = 2;
   const { incParamCount, paramCount, setOpened, opened } = openSelectorBar((state) => state);
   const { setCountry, country } = urlParams((state) => state);
@@ -27,7 +27,7 @@ export const CountrySelector = () => {
     }
   };
   useEffect(() => {
-    if (country != undefined) {
+    if (country != undefined && isSelect == null) {
       setIsSelect(countries.findIndex((item) => item === country));
       incParamCount();
     }
@@ -43,7 +43,8 @@ export const CountrySelector = () => {
 
   return (
     <div className={style.main}>
-      <div
+      <button
+        disabled={loading}
         onClick={() => {
           changeSelect(id);
         }}
@@ -54,7 +55,7 @@ export const CountrySelector = () => {
         <div className={`${style.arrow} ${opened == id ? style.activeArrow : ''}`}>
           <ChevronDown size={21} strokeWidth={1.25} />
         </div>
-      </div>
+      </button>
       <div className={`${style.options} ${opened == id ? style.activeMenu : ''}`}>
         {countries.map((item, id) => (
           <div
