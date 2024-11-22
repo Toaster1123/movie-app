@@ -30,6 +30,7 @@ export const RecomendsMovie = (props) => {
         <Swiper
           style={{
             '--swiper-navigation-color': '#fff',
+            overflow: 'inherit',
           }}
           slidesPerView={5.35}
           slidesPerGroup={4}
@@ -47,7 +48,11 @@ export const RecomendsMovie = (props) => {
           spaceBetween={12}>
           {(loading ? [...Array(5)] : props.filmsData).map((item, id) => {
             return (
-              <SwiperSlide className={style.SwiperSlide} key={id}>
+              <SwiperSlide
+                className={`${style.SwiperSlide} ${
+                  props.height == 'imageBorderBig' ? style.SwiperSlide_big : ''
+                }`}
+                key={id}>
                 <SliderItem item={item} height={props.height} loading={loading} />
               </SwiperSlide>
             );

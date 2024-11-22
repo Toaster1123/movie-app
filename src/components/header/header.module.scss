@@ -25,14 +25,15 @@ header {
   height: 66px;
   .header {
     display: flex;
+    // max-height: 66px;
     width: 88vw;
     justify-content: space-between;
     .headerLeft {
       img {
         @include btn();
       }
-      display: flex;
       align-items: center;
+      display: flex;
       .genres {
         a {
           text-decoration: none;
@@ -55,18 +56,10 @@ header {
         }
       }
     }
-    .headerRight {
+    .headerRight:not(.searchBar) {
       display: flex;
       align-items: center;
-      .search {
-        transition: 0.2s ease-in-out;
-        margin-right: 50px;
-        margin-top: 4px;
-        @include btn();
-        &:hover {
-          color: $headerTextColor;
-        }
-      }
+
       .user {
         font-size: 17px;
         width: 88px;

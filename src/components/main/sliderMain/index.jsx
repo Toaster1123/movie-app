@@ -37,7 +37,8 @@ export const SliderMain = () => {
         // spaceBetween={0}
         loop
         autoplay={{
-          delay: 14000,
+          enabled: !loading,
+          delay: 12000,
           disableOnInteraction: false,
         }}
         centeredSlides>

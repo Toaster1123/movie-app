@@ -23,7 +23,9 @@ export const SliderItem = ({ item, height, loading }) => {
     <div
       onMouseOut={onOutHover}
       onMouseLeave={onOutHover}
-      className={`${style.main} ${isHover ? style.main_hover : ''} `}>
+      className={`${style.main} ${isHover ? style.main_hover : ''} ${
+        height == 'imageBorderBig' ? style.imageBorderBig : ''
+      } `}>
       {loading ? (
         <ContentLoader
           speed={2.3}
