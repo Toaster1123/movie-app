@@ -14,34 +14,28 @@ const genres = [
   ['/cartoons', 'Мультфильмы'],
 ];
 export const Header = () => {
-  const [isScrolledDown, setIsScrolledDown] = React.useState(false);
-  const [prevPos, setPrevPos] = React.useState(0);
+  const [prevScroll, setPrevScroll] = React.useState(0);
+  const [isShow, setIsShow] = React.useState(false);
   const setOpened = isOpened((state) => state.setOpened);
   const location = useLocation();
-  const scroll = () => {
+  // console.log(prevScroll);
+  const test = () => {
     const scrollPos = window.scrollY;
-    console.log('scrollPos', scrollPos);
-    console.log('prevPOs', prevPos);
-    if (scrollPos - prevPos > 0) {
-      setIsScrolledDown(true);
-    } else {
-      setIsScrolledDown(false);
+    if (scrollPos - prevScroll > 0) {
+      console.log('true');
+      setIsShow(true);
+    } else if (scrollPos - prevScroll <= 0) {
+      console.log('false');
+      setIsShow(false);
     }
-    // if (scrollPos > 100 && !isScrolledDown) {
-    //   setIsScrolledDown(true);
-    // } else if (scrollPos <= 200 && isScrolledDown) {
-    //   setIsScrolledDown(false);
-    // }
-    setPrevPos(scrollPos);
+    setPrevScroll(scrollPos);
+
+    // console.log(scrollPos);
   };
-  React.useEffect(() => {
-    window.addEventListener('scroll', scroll);
-    return () => {
-      window.removeEventListener('scroll', scroll);
-    };
-  }, [isScrolledDown]);
+  window.addEventListener('wheel', test);
+
   return (
-    <header className={`${isScrolledDown ? style.header_active : ''}`}>
+    <header className={`${isShow ? style.header_active : ''}`}>
       <div className={style.header}>
         <div className={style.headerLeft}>
           <Link to="/">

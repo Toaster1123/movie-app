@@ -6,7 +6,7 @@
 .main {
   transition: 0.28s ease-in-out;
   color: white;
-  // @include height-width;
+  @include height-width;
   a {
     color: white;
     cursor: default;

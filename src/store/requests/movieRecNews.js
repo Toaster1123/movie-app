@@ -1,5 +1,6 @@
 import { create } from 'zustand';
 import axios from 'axios';
+import { key } from './key';
 
 export const useMovieNews = create((set) => ({
   data: [],
@@ -11,7 +12,7 @@ export const useMovieNews = create((set) => ({
         'https://api.kinopoisk.dev/v1.4/movie?notNullFields=backdrop.url&notNullFields=poster.url&genres.name=!концерт&notNullFields=movieLength',
         {
           headers: {
-            'X-API-KEY': '4G89DHV-E8P4HZE-NVKHR5V-HH4C6D5',
+            'X-API-KEY': key,
             'Content-Type': 'application/json',
           },
           params: {
