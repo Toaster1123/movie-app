@@ -59,8 +59,8 @@ export const PersonPage = () => {
               </>
             )}
           </div>
-          {personData.facts != null && <Facts />}
-          {personData.movies && <Participation />}
+          {personData.facts.length > 0 && <Facts />}
+          {personData.movies.length > 0 && <Participation />}
         </>
       )}
     </div>
