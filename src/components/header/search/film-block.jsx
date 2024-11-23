@@ -5,7 +5,9 @@ export const FilmBlock = ({ id, url, filmName }) => {
   return (
     <div className={style.filmBlock}>
       <Link to={`film/${id}`}>
-        <img height={70} src={url} alt="Картинка" />
+        <div className={style.imageBlock}>
+          <img height={70} src={url} alt="Картинка" />
+        </div>
         <div>{filmName}</div>
       </Link>
     </div>

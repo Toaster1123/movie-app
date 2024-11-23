@@ -1,8 +1,8 @@
 import React from 'react';
-import { CircleUserRound } from 'lucide-react';
+import { CircleChevronLeft, CircleUserRound } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useLocation } from 'react-router-dom';
-
+import { useNavigate } from 'react-router-dom';
 import { isOpened } from '../../store/openUser';
 
 import style from './header.module.scss';
@@ -15,6 +15,7 @@ const genres = [
   ['/cartoons', 'Мультфильмы'],
 ];
 export const Header = () => {
+  const navigate = useNavigate();
   const location = useLocation();
   const setOpened = isOpened((state) => state.setOpened);
   const [visible, setVisible] = React.useState(true);
@@ -39,6 +40,15 @@ export const Header = () => {
     <header className={`${!visible ? style.header_active : ''}`}>
       <div className={style.header}>
         <div className={style.headerLeft}>
+          {genres.findIndex((item) => item[0] == window.location.pathname) != -1 || (
+            <CircleChevronLeft
+              onClick={() => navigate(-1)}
+              className={style.buttonBack}
+              size={32}
+              strokeWidth={2.5}
+            />
+          )}
+
           <Link to="/">
             <img src="/./img/logo.png" alt="Логотип" height={50} width={50} />
           </Link>
@@ -56,7 +66,7 @@ export const Header = () => {
         </div>
         <div className={style.headerRight}>
           <div className={style.searchBar}>
-            <SearchBar />
+            <SearchBar visible={visible} />
           </div>
           <div
             onClick={() => {

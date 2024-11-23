@@ -25,7 +25,6 @@ header {
   height: 66px;
   .header {
     display: flex;
-    // max-height: 66px;
     width: 88vw;
     justify-content: space-between;
     .headerLeft {
@@ -81,4 +80,13 @@ header {
 }
 .header_active {
   top: -66px;
+}
+.buttonBack {
+  position: relative;
+  left: -40px;
+  transition: 0.2s;
+  &:hover {
+    color: rgb(205, 205, 205);
+    cursor: pointer;
+  }
 }

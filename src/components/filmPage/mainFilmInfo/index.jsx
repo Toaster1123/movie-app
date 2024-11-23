@@ -2,6 +2,7 @@ import React from 'react';
 import { Bookmark } from 'lucide-react';
 import { useParams } from 'react-router-dom';
 import ContentLoader from 'react-content-loader';
+import { Link } from 'react-router-dom';
 
 import { useMovieItem } from '../../../store/requests/movieItem';
 import { FilmInfo } from '../../filmInfo';
@@ -57,7 +58,9 @@ export const MainFilmInfo = () => {
                 <div className={style.role}>Режисер: </div>
                 <div className={style.names}>
                   <span className={style.name}>
-                    {movieItem?.persons[movieItem.persons.length - 1].name}
+                    <Link to={`/person/${movieItem.persons.id}`}>
+                      {movieItem?.persons[movieItem.persons.length - 1].name}
+                    </Link>
                   </span>
                 </div>
               </div>
@@ -70,10 +73,12 @@ export const MainFilmInfo = () => {
                         return;
                       }
                       return (
-                        <span key={id} className={style.name}>
-                          {item.name == null ? item.enName : item.name}
-                          {id == 2 ? '' : ','}
-                        </span>
+                        <Link to={`/person/${movieItem.persons.id}`}>
+                          <span key={id} className={style.name}>
+                            {item.name == null ? item.enName : item.name}
+                            {id == 2 ? '' : ','}
+                          </span>
+                        </Link>
                       );
                     })}
                   </div>

@@ -54,6 +54,11 @@
     margin: 32px 0;
     .members {
       display: flex;
+      user-select: none;
+      a {
+        text-decoration: none;
+        color: #dcdcdc;
+      }
       .role {
         color: #9d9d9d;
       }

@@ -4,6 +4,7 @@ import { key } from './key';
 
 export const useSerchFilms = create((set) => ({
   films: [],
+  setFilms: () => set(() => ({ films: [] })),
   fetchItems: async (value) => {
     try {
       set({ loading: true });

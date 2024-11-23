@@ -14,7 +14,6 @@ export const PersonPage = () => {
   const fetchItems = usePersonItem((state) => state.fetchItems);
   const loading = usePersonItem((state) => state.loading);
   const { id } = useParams();
-  console.log(personData);
   React.useEffect(() => {
     try {
       fetchItems(id);
